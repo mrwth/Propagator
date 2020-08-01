@@ -278,7 +278,7 @@ Our motivation is the link with 2dim $\sigma$-models and Poisson-Lie T-duality d
 
 % To get a full equivalence with a 2d $\sigma$-model we would also need another boundary component and a choice of a Lagrangian Lie subalgebra $\h\subset\g$ as above. However, for the short-distance problems that we study this is not very relevant, so we can stay with our rather simple CS model on $B^3$.
 
-\subsection{Propagator and regularization}
+\subsection{Regularization}
 % The propagator of our model is the $\g\otimes\g$-valued 2-form
 % $$P:=P_0\otimes t_+ + \bar P_0\otimes t_- \in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)$$
 % where $t_+\in V_+\otimes V_+$ and $t_-\in V_-\otimes V_-$ is the (inverse of) the inner product on $V_+$ and on $V_-$ respectively.
@@ -286,7 +286,7 @@ Our motivation is the link with 2dim $\sigma$-models and Poisson-Lie T-duality d
  Feynman diagrams computed with the propagator \eqref{gmprop} in general diverge, so we need to introduce a regularization.
 
 We choose a smooth cutoff function
-$$\ell:S^2\to(0,\pi)$$ and  we regularize our integrals by preventing the projections of the points to $S^2$ to be closer than $\ell$.
+$$\ell:S^2\to(0,\infty)$$ and  we regularize our integrals by preventing the projections of the points to $S^2$ to be closer than $\ell$.
 
 More precisely, we replace $\omega$ (see \eqref{omega}) with
 $$\omega^{(\ell)}:=H_\ell\, \omega$$
@@ -294,11 +294,11 @@ where $H_\ell:\cf_2(S^2)\to\{0,1\}$ is given by
 $$
 H_\ell(z_1,z_2)=
 \begin{cases}
-0 & \text{if } d(z_1,z_2)\leq \ell(\on{mid}(z_1,z_2))\\
-1 & \text{otherwise.}
+0 & \text{if } d(z_1,z_2)\leq \bigl(\ell(z_1)+\ell(z_2)\bigr)/2\\
+1 & \text{otherwise}
 \end{cases}
 $$
-Here $d(z_1,z_2)$ is the spherical distance of points on $S^2$, and $\on{mid}(z_1,z_2)\in S^2$ is the midpoint between $z_1$ and $z_2$.\footnote{%
+where $d(z_1,z_2)$ is the spherical distance of points on $S^2$.\footnote{%
 A more natural choice (not using the spherical distance) is to declare that $\ell^{-2}$ is a Riemannian metric on $S^2$ in the given conformal class and that $H_\ell$ is 0 iff the geodesic distance of the two points is less than 1. For our purposes these two cutoffs give the same results.}
 Then we replace $P_0$ with
 $$P_0^{(\ell)}=p^*\omega^{(\ell)}/2\pi i$$
@@ -377,7 +377,7 @@ On the other hand, to define $w^{(\ell)}_{\Gamma}$ and $T_{\Gamma}$ for a signed
 % In other words, we regularize our integrals by preventing the projections of the points on $S^2$ to be closer than $\ell$. Now all the integrals $\alpha_{\Gamma,V_+}^{(\ell)}$ converge absolutely, as explained in [KONTSEVICH].
 
 
-\subsection{1-loop divergence and conformal invariance}
+\subsection{Generalized Ricci tensor and conformal invariance}
 We shall say that a signed diagram $\Gamma$ is convergent if the limit
 $$\lim_{\epsilon\to 0_+}w_{\Gamma}^{(\epsilon\ell)}$$
 exists and is independent of $\ell$. 
@@ -402,7 +402,11 @@ $$
 As a result, the 1-loop condition for conformal invariance is 
 $$T_{D}=0.$$
 
-The element $-T_{D}\in V_+\otimes V_-$ is known as the \emph{generalized Ricci tensor} of the generalized metric $V_+\subset\g$ \cite{CSW,G,SV,???}. The 1-loop conformality condition is thus the vanishing of the generalized Ricci tensor. {\color{red} CITE \cite{SST} PROPERLY}
+The element $-T_{D}\in V_+\otimes V_-$ is known as the \emph{generalized Ricci tensor} of the generalized metric $V_+\subset\g$ \cite{CSW,G,SV,???}. The 1-loop conformality condition is thus the vanishing of the generalized Ricci tensor. %{\color{red} CITE \cite{SST} PROPERLY}
+
+\begin{rem}
+The 1-loop conformality condition $T_D=0$ (and the corresponding role of $T_D$ as a beta-function, see \S\ref{ss:RGflow}) was discovered in \cite{SST} for a 2-dim model which can be seen as a Hamiltonian version of the CS model with the $V_+$-boundary condition. This somewhat miraculous result of \emph{op.cit.} thus gets a natural explanation, coming from a single Chern-Simons diagram.
+\end{rem}
 
 \subsection{Effective action}
 As usual, it is more economical to study the  1PI effective action $S^{(\ell)}_\text{eff}$ rather than the correlation forms $G_k^{(\ell)}$. It is a functional on our BV space of fields
@@ -452,7 +456,7 @@ $$
 $$
 To get its divergent part, we use the following lemma which can be proved by a straightforward calculation (see Appendix).
 \begin{lem}\label{lem:CS}
-If $\ell_1,\ell_2:S^2\to(0,\pi)$ are smooth, $\alpha,\beta\in\Omega(B^3)$, and if $p_1$ and $p_2$ are the projections $\cf_2(B^3)\to B^3$, then
+If $\ell_1,\ell_2:S^2\to(0,\infty)$ are smooth, $\alpha,\beta\in\Omega(B^3)$, and if $p_1$ and $p_2$ are the projections $\cf_2(B^3)\to B^3$, then
 \begin{multline*}
 \lim_{\epsilon\to0_+}\int_{\cf_2(B^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;P_0\bar P_0\;p_1^*\alpha\; p_2^*\beta\\
 =-\frac1{2\pi} \int_{S^2}\log(\ell_1/\ell_2)\;(\alpha^{(1)}|_{S^2})\,*(\beta^{(1)}|_{S^2}) 
@@ -650,7 +654,7 @@ $$
 %\draw[dotted,->-=0.65](1.5,0.5) to[out=120,in=90](a);
 \end{tikzpicture}
 $$
-in our model. Moreover, a conformal invariance should also require a kind of a dilaton field (indeed, when the underlying Courant algebroid is exact, our model is equivalent to a 2-dim $\sigma$-model with the target $W$, and in that case we should certainly see a dilaton field). We shall leave these problems to a future work.
+in our model. Moreover, a conformal invariance should also require a kind of a dilaton field (indeed, when the underlying Courant algebroid is exact, our model is equivalent to a 2-dim $\sigma$-model with the target $W$, and in that case we should certainly see a dilaton field). The results of \cite{SV2} suggest that this generalized dilaton field should be a half-density and the conformality condition should require it to be an eigenvector of a natural Laplace operator. We shall leave these problems to a future work.
 
 
 
@@ -776,6 +780,7 @@ This behaviour follows from a simple scaling argument: the propagators are scale
 \bibitem{SST} Siampos Sfetsos Thompson 
 \bibitem{S} Ševera CS
 \bibitem{SV} Ševera Valach
+\bibitem{SV} Ševera Valach II
 \bibitem{W} Witten CS
 
 
