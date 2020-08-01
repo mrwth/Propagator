@@ -145,7 +145,7 @@ P_0:=p^*\omega/2\pi i.
 \end{equation}
 
 
-One can easily see that $P_0$ has all the required properties. In particular, if we fix one of the two points in $B^3$ to be in the center, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries.
+One can easily see that $P_0$ has the required properties. In particular, if we fix one of the two points in $B^3$ to be in the center, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries.
 
 \begin{rem}
 In the usual setup of BV quantization one needs to choose a Lagrangian submanifold in the space of fields and restrict the path integral to this submanifold. The corresponding homotopy $h$ then satisfies $h^2=0$. We do not verify this relation for our $h$; as explained to \cite{CM}, it is not necessary.
@@ -164,6 +164,7 @@ $$\bigl(\Omega_{(+)}(S^2)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(S^2)\otimes
 i.e.\ the  space of fields with this boundary condition is
 $$\bigl(\Omega_{b}(B^3)[1]\otimes V_+\bigr) \oplus \bigl(\Omega_{\bar b}(B^3)[1]\otimes V_-\bigr)\subset \Omega(B^3)[1]\otimes\g.
 $$
+
 The propagator is
 \begin{equation}\label{gmprop}
 P=P_0\otimes t_+ + \bar P_0\otimes t_-\in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)
@@ -218,7 +219,7 @@ Let us choose a Lagrangian Lie subalgebra $\h\subset\g$ (i.e.\ $\h^\perp=\h$) an
 \end{equation}
 This boundary condition doesn't use any geometric structure on $\Sigma$, so it is (classically) topological, unlike the $V_+$-boundary condition. 
 
-It should be noted that while the $V_+$-boundary condition completely removes the gauge symmetry on $\Sigma$, the  $\h$-boundary condition leaves us with a residual gauge symmetry on $\Sigma$, with gauge transformations taking values in $H$ (in the bulk the gauge transformations take values in $G$). This is reflected by the 0-form part of the boundary conditions, playing the role of ghosts - in the first case we have no ghosts, and in the second case we have $\Omega^0(\Sigma)\otimes\h$. 
+It should be noted that while the $V_+$-boundary condition completely removes the gauge symmetry on $\Sigma$, the  $\h$-boundary condition leaves us with a residual gauge symmetry on $\Sigma$, with gauge transformations taking values in $H$ (in the bulk the gauge transformations take values in $G$). This is reflected by the 0-form part of the boundary conditions, playing the role of ghosts - in the first case we have no ghosts on the boundary, and in the second case we have $\Omega^0(\Sigma)\otimes\h$. 
 
 \begin{rem}
 This boundary condition seems to have a 1-loop anomaly if $\h$ is not unimodular. Let us conjecture that we can still make sense of it by choosing an area form on the boundary (up to a constant multiple), at the price that the boundary condition will no longer be topological. 
@@ -227,9 +228,10 @@ This boundary condition seems to have a 1-loop anomaly if $\h$ is not unimodular
 \subsection{2-dim $\sigma$-models on the CS boundary}
 
 Let us now consider the 3-manifold 
-$$M=\Sigma\times [0,1].$$
+$$M=\Sigma\times [0,1]$$
+where $\Sigma$ is a Riemann surface.
 The boundary of $M$ has 2 components, $\Sigma\times\{0\}$ and $\Sigma\times\{1\}$.
-On $\Sigma\times\{0\}$ we impose the $V_+$-boundary condition and on $\Sigma\times\{1\}$ the $\h$-boundary condition. Our gauge transformations are thus trivial on $\Sigma\times\{0\}$ and take values in $H$ on $\Sigma\times\{1\}$. (Note that the existence of a Lagrangian $\h\subset\g$ implies that $\dim V_+=\dim V_-$.)
+On $\Sigma\times\{0\}$ we impose the $V_+$-boundary condition and on $\Sigma\times\{1\}$ the $\h$-boundary condition. Our gauge transformations are thus trivial on $\Sigma\times\{0\}$ and take values in $H$ on $\Sigma\times\{1\}$. (The existence of a Lagrangian $\h\subset\g$ implies that $\dim V_+=\dim V_-$.)
 
 As explained in \cite{S,PSV}, Chern-Simons theory on $M=\Sigma\times[0,1]$, with this boundary condition, is equivalent to a 2-dim $\sigma$-model with the worldsheet $\Sigma$ and the target space $G/H$. Namely, given points $z_1,\dots,z_n\in\Sigma$ and functions $f_1,\dots,f_n\in C^\infty(G/H)$, which we can see as $H$-invariant functions on $G$, we have the equality of correlation functions
 \begin{equation}
@@ -266,13 +268,13 @@ and the corresponding $\sigma$-model is then the WZW model with the group $G_0$ 
 
 \subsection{Poisson-Lie T-duality}
 
-Let us now fix $V_+\subset\g$ and choose two different Lagrangian Lie subalgebras $\h,\h'\subset\g$. The above-described boundary conditions then give us two 2d $\sigma$-models with the targets $G/H$ and $G/H'$. These two $\sigma$-models are called \emph{Poisson-Lie T-dual} \cite{KSe} to each other. While they are not completely equivalent (the topological boundary conditions are different, one given by $\h$ and the other by $\h'$), they differ only by topological degrees of freedom.
+Let us now fix $V_+\subset\g$ and choose two Lagrangian Lie subalgebras $\h,\h'\subset\g$. The above-described boundary conditions then give us two 2d $\sigma$-models with the targets $G/H$ and $G/H'$. These two $\sigma$-models are called \emph{Poisson-Lie T-dual} \cite{KSe} to each other. While they are not completely equivalent (the topological boundary conditions are different, one given by $\h$ and the other by $\h'$), they differ only by topological degrees of freedom.
 
 In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian and $G=\g/\Lambda$ is a torus ($\Lambda\subset\g$ is a lattice), and also $H,H'\subset G$ are required to be tori. For a suitable choice of $\Lambda$ the seemingly different topological boundary conditions, given by $\h$ and $\h'$, actually coincide on the quantum level \cite{KSa}. This implies that the two $\sigma$-models, with the targets $G/H$ and $G/H'$, are truly equivalent. Such a statement is not (yet) known for non-abelian $G$'s. 
 
 \section{Diagramatics, RG flow, and the Generalized Ricci tensor}\label{sec:diag}
-In this section we shall study perturbatively the Chern-Simons theory on the ball $B^3$ with the $V_+$-boundary condition introduced in \S\ref{sec:gm}.
-Our motivation is the link with 2d $\sigma$-models and Poisson-Lie T-duality described above. We shall study  the short-distance behaviour close to $S^2$, and the resulting RG flow of the subspace $V_+\subset\g$ and the condition for conformal invariance. 
+In this section we shall study perturbatively the Chern-Simons theory on the ball $B^3$ with the $V_+$-boundary condition.
+Our motivation is the link with 2dim $\sigma$-models and Poisson-Lie T-duality described above. We shall study  the short-distance behaviour close to $S^2$, and the resulting RG flow of the subspace $V_+\subset\g$ and the condition for conformal invariance. 
 
 % To get a full equivalence with a 2d $\sigma$-model we would also need another boundary component and a choice of a Lagrangian Lie subalgebra $\h\subset\g$ as above. However, for the short-distance problems that we study this is not very relevant, so we can stay with our rather simple CS model on $B^3$.
 
@@ -297,7 +299,7 @@ H_\ell(z_1,z_2)=
 \end{cases}
 $$
 Here $d(z_1,z_2)$ is the spherical distance of points on $S^2$, and $\on{mid}(z_1,z_2)\in S^2$ is the midpoint between $z_1$ and $z_2$.\footnote{%
-A more natural choice is to declare that $\ell^{-1}$ is a Riemannian metric on $S^2$ in the given conformal class and that $H_\ell$ is 0 iff the distance of the two points is less than 1. For our purposes these two cutoffs give the same results.}
+A more natural choice (not using the spherical distance) is to declare that $\ell^{-2}$ is a Riemannian metric on $S^2$ in the given conformal class and that $H_\ell$ is 0 iff the geodesic distance of the two points is less than 1. For our purposes these two cutoffs give the same results.}
 Then we replace $P_0$ with
 $$P_0^{(\ell)}=p^*\omega^{(\ell)}/2\pi i$$
 and the propagator $P$ with
@@ -483,7 +485,7 @@ and from that and from \eqref{Seff-asymp} get an ODE for $V_+$, i.e.\ its renorm
 
 This usual approach has to be slightly modified, however, because the space of fields depends on $\epsilon$ (as $V_+$, and thus the boundary condition, depends on $\epsilon$). We will redefine the fields so that the boundary condition doesn't change, and instead get a change of the action $S$.
 
-If we have an infinitesimal $\delta R\in\bw^2\g=\mf{so}(\g)$, let us deform $V_+$ to $(1+\delta R)V_+$ (if $v\in\g$, by $\delta R\,v\in\g$ we mean the element given by $\la\delta R\,v,w\ra=\la R,v\otimes w\ra$ for all $w\in\g$). We can redefine the fields so that they satisfy the new boundary condition via $A\to A+\delta A$, $\delta A= f\,\delta R\,A$, where $f\in C^\infty(B^3)$ is an arbitrary function s.t.\ $f|_{S^2}=1$.
+If we have an infinitesimal $\delta R\in\bw^2\g=\mf{so}(\g)$, let us deform $V_+$ to $(1+\delta R)V_+$ (if $v\in\g$, by $\delta R\,v\in\g$ we mean the element given by $\la\delta R\,v,w\ra=\la R,v\otimes w\ra$ for all $w\in\g$). We can redefine the fields so that they satisfy the deformed boundary condition via $A\to A+\delta A$, $\delta A= f\,\delta R\,A$, where $f\in C^\infty(B^3)$ is an arbitrary function s.t.\ $f|_{S^2}=1$.
 
 
 The variation of the (classical) action that we obtain is
