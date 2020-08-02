@@ -75,13 +75,13 @@ The (naive) space of fields of the CS theory is $\Omega^1(B^3)\otimes\g$. The Li
 \subsection{Chiral boundary condition}
 The chiral boundary condition demands that the fields, when restricted to $\partial B^3 = S^2$, are in $\Omega^{1,0}(S^2)\subset\Omega^1(S^2)$ (using the standard complex structure on $S^2=\CP$). 
 
-Let us rephrase this boundary condition in the BV formalism, including ghosts and antifields. Let 
+Let us rephrase this boundary condition in the BV formalism, including ghosts (0-forms) and antifields (2-forms and 3-forms). Let 
 $$\Omega_b(B^3)\subset\Omega(B^3)$$
 be the subcomplex of the forms whose restriction to $S^2$ is in
 $$\Omega_{(+)}(S^2):=\Omega^{1,0}(S^2)\oplus\Omega^2(S^2)\subset\Omega(S^2).$$
-Let us observe that $\Omega_b(B^3)$ is acyclic.
 Then our BV space of fields is
-$$\Omega_b(B^3)[1].$$
+$\Omega_b(B^3)[1]$.
+Let us observe that it is acyclic.
 % Notice that our boundary condition kills the gauge symmetry on the boundary; this corresponds to the fact that the ghosts, i.e. the 0-forms in $\Omega_b(B^3)[1]$, vanish on the boundary.
 
 % In the BV formalism, which we will be using throughout the paper, our space of fields, including ghosts and antifields, is then the  subcomplex
@@ -104,12 +104,12 @@ $$d\,h+h\,d=\id.$$
 Moreover, $h$ should be given by an integral kernel 
 $$P_0\in\Omega^2(\cf_2(B^3)),$$
 where
-$$\cf_2(B^3):=B^3\times B^3\setminus\text{diagonal},$$
-and $P_0$ should only have a mild singularity at the diagonal of $B^3\times B^3$ (see \cite{AS, K}).
+$$\cf_2(B^3):=B^3\times B^3\setminus\text{diagonal}.$$
+%and $P_0$ should only have a mild singularity at the diagonal of $B^3\times B^3$ (see \cite{AS, K}).
 
 Let us describe a suitable $P_0$ explicitly, using the natural $SL(2,\C)$-invariant holomorphic closed 2-form
 \begin{equation}\label{omega}
-\omega =\frac{dz_1\wedge dz_2}{(z_1-z_2)^2}\quad\in\ \Omega^2(\cf_2(\CP)). 
+\omega =\frac{dz_1\wedge dz_2}{(z_1-z_2)^2}\ \in\ \Omega^2(\cf_2(\CP)). 
 \end{equation}
 
 
@@ -122,7 +122,7 @@ $$
   \tkzDefPoint(0,0){O}
   \tkzDefPoint(1,0){A}
   \tkzDrawCircle(O,A)  
-  \tkzDefPoint(.3,-.5){q1}
+  \tkzDefPoint(-.1,-.5){q1}
   \tkzDefPoint(.7,0.1){q2}
   \begin{scope}
     \tkzClipCircle(O,A)
@@ -514,7 +514,7 @@ V_+(\epsilon+d\epsilon)=\bigl(1+\frac{d\epsilon}\epsilon\,\hbar\, B\bigr)V_+(\ep
 $$-\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra -\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
 and so we can set
 \begin{equation}
-B=-\frac1\pi (T_{D}^{\ }-T_{D}^{\hphantom{x}\text{op}}).
+B=-\frac1\pi (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
 \end{equation}
 We thus found the 1-loop RG flow of $V_+$ in our model, with $\hbar B$ playing the role of the $\beta$-function. 
 \end{subequations}
