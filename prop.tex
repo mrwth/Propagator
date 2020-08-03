@@ -78,7 +78,7 @@ The chiral boundary condition demands that the fields, when restricted to $\part
 Let us rephrase this boundary condition in the BV formalism, including ghosts (0-forms) and antifields (2-forms and 3-forms). Let 
 $$\Omega_b(B^3)\subset\Omega(B^3)$$
 be the subcomplex of the forms whose restriction to $S^2$ is in
-$$\Omega_{(+)}(S^2):=\Omega^{1,0}(S^2)\oplus\Omega^2(S^2)\subset\Omega(S^2).$$
+$$\Omega_{(+)}(S^2):=\Omega^{1,0}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
 Then our BV space of fields is
 $\Omega_b(B^3)[1]$.
 Let us observe that it is acyclic.
@@ -93,12 +93,12 @@ Let us observe that it is acyclic.
 For future reference, let 
 $$\Omega_{\bar b}(B^3)\subset\Omega(B^3)$$
 be the subbcomplex given by the boundary condition
-$$\Omega_{(-)}(S^2):=\Omega^{0,1}(S^2)\oplus\Omega^2(S^2)\subset\Omega(S^2).$$
+$$\Omega_{(-)}(S^2):=\Omega^{0,1}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
 
 
 \subsection{Propagator}
 The propagator we are looking for should be a degree $-1$ map 
-$$h:\Omega_b(B^3)\to\Omega_b(B^3)$$
+$$h\colon\Omega_b(B^3)\to\Omega_b(B^3)$$
 such that
 $$d\,h+h\,d=\id.$$
 Moreover, $h$ should be given by an integral kernel 
@@ -138,7 +138,7 @@ $$
 \end{tikzpicture}
 $$
 We thus obtain a projection
-$$p:\cf_2(B^3)\to \cf_2(\CP),\quad p(q_1,q_2):=(z_1,z_2).$$
+$$p\colon\cf_2(B^3)\to \cf_2(\CP),\quad p(q_1,q_2):=(z_1,z_2).$$
 Finally we set 
 \begin{equation}
 P_0:=p^*\omega/2\pi i.
@@ -286,11 +286,11 @@ Our motivation is the link with 2dim $\sigma$-models and Poisson-Lie T-duality d
  Feynman diagrams computed with the propagator \eqref{gmprop} in general diverge, so we need to introduce a regularization.
 
 We choose a smooth cutoff function
-$$\ell:S^2\to(0,\infty)$$ and  we regularize our integrals by preventing the projections of the points to $S^2$ to be closer than $\ell$.
+$$\ell\colon S^2\to(0,\infty)$$ and  we regularize our integrals by preventing the projections of the points to $S^2$ to be closer than $\ell$.
 
 More precisely, we replace $\omega$ (see \eqref{omega}) with
 $$\omega^{(\ell)}:=H_\ell\, \omega$$
-where $H_\ell:\cf_2(S^2)\to\{0,1\}$ is given by
+where $H_\ell\colon\cf_2(S^2)\to\{0,1\}$ is given by
 $$
 H_\ell(z_1,z_2)=
 \begin{cases}
@@ -357,7 +357,7 @@ Namely, $w^{(\ell)}_{\Gamma'}$ is obtained by putting $P^{(\ell)}_0$ to every  $
 In the discussion above we glossed over the signs appearing in the calculation of $G_k^{(\ell)}$'s. 
 We  refer the reader to \cite{AS} for the details. The idea is to see $P_\pm^{(\ell)}$ as elements of $\Omega^2(\cf_2(B^3))\otimes\bw^2(\g\oplus\g)$, which makes them symmetric under the flip of the two points, so we don't need to orient the edges. We then take the product of $P_\pm^{(\ell)}$'s over the edges to get an element of $\Omega(\cf_V(B^3))\otimes\bw(\g^V)$, where $V$ is the set of the vertices. Finally, at each internal vertex we contract with the structure constants and integrate. Since the objects/operations assigned to edges and to internal vertices are even, the outcome is well defined (i.e.\ independent of the order).
 
-On the other hand, to define $w^{(\ell)}_{\Gamma}$ and $T_{\Gamma}$ for a signed $\Gamma$ individually (i.e.\ not just their product) we need additional choices on $\Gamma$, e.g.\ a cyclic order at each internal vertex. To make things explicit, we shall always use the anticlockwise order in the diagrams that we draw.
+On the other hand, to define $w^{(\ell)}_{\Gamma}$ and $T_{\Gamma}$ for a signed $\Gamma$ individually (i.e.\ not just their product $\alpha^{(\ell)}_{\Gamma}$) we need additional choices on $\Gamma$, e.g.\ a cyclic order at each internal vertex. To make things explicit, we shall always use the anticlockwise order in the diagrams that we draw.
 \end{rem}
 
 % \subsection{Regularization}
@@ -693,7 +693,7 @@ p_2^*\beta&=b_+\, d(z+t_2 u) + b_-\, d(\bar z + t_2\bar u)
 \end{align*}
 and so
 \begin{multline*}
-I=-\frac1{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dw\,d\bar w\,dt_1\,dt_2\,(a_+b_-+a_-b_+) \\
+I=-\frac1{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dz\,d\bar z\,dt_1\,dt_2\,(a_+b_-+a_-b_+) \\
 =\frac i{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dt_1\,dt_2\,\alpha *\beta.
 \end{multline*}
 The integral of 
