@@ -137,11 +137,11 @@ $$
   \tkzLabelPoint[right](C){$z_2$}
 \end{tikzpicture}
 $$
-We thus obtain a projection
-$$p\colon\cf_2(B^3)\to \cf_2(\CP),\quad p(q_1,q_2):=(z_1,z_2).$$
-Finally we set 
+We thus obtain a map
+$$r\colon\cf_2(B^3)\to \cf_2(\CP),\quad r(q_1,q_2):=(z_1,z_2)$$
+and we set 
 \begin{equation}
-P_0:=p^*\omega/2\pi i.
+P_0:=r^*\omega/2\pi i.
 \end{equation}
 
 
@@ -274,7 +274,7 @@ In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian and $G=\g/\L
 
 \section{Diagramatics, RG flow, and the Generalized Ricci tensor}\label{sec:diag}
 In this section we shall study perturbatively the Chern-Simons theory on the ball $B^3$ with the $V_+$-boundary condition.
-Our motivation is the link with 2dim $\sigma$-models and Poisson-Lie T-duality described above. We shall study  the short-distance behaviour close to $S^2$, and the resulting RG flow of the subspace $V_+\subset\g$ and the condition for conformal invariance. 
+Our motivation is the link with 2-dim $\sigma$-models and Poisson-Lie T-duality described above. We shall study  the short-distance behaviour close to $S^2$, and the resulting RG flow of the subspace $V_+\subset\g$ and the condition for conformal invariance. 
 
 % To get a full equivalence with a 2d $\sigma$-model we would also need another boundary component and a choice of a Lagrangian Lie subalgebra $\h\subset\g$ as above. However, for the short-distance problems that we study this is not very relevant, so we can stay with our rather simple CS model on $B^3$.
 
@@ -301,7 +301,7 @@ $$
 where $d(z_1,z_2)$ is the spherical distance of points on $S^2$.\footnote{%
 A more natural choice (not using the spherical distance) is to declare that $\ell^{-2}$ is a Riemannian metric on $S^2$ in the given conformal class and that $H_\ell$ is 0 iff the geodesic distance of the two points is less than 1. For our purposes these two cutoffs give the same results.}
 Then we replace $P_0$ with
-$$P_0^{(\ell)}=p^*\omega^{(\ell)}/2\pi i$$
+$$P_0^{(\ell)}=r^*\omega^{(\ell)}/2\pi i$$
 and the propagator $P$ with
 $$P^{(\ell)}=P_0^{(\ell)}\otimes t_+ + \bar P_0^{(\ell)}\otimes t_-$$
  Now all the integrals converge absolutely, as explained in \cite{AS,K} using suitable compactifications of configuration spaces.
@@ -373,7 +373,7 @@ On the other hand, to define $w^{(\ell)}_{\Gamma}$ and $T_{\Gamma}$ for a signed
 % \end{cases}
 % $$
 % Here $d(z_1,z_2)$ is the spherical distance of points on $S^2$, and $\on{mid}(z_1,z_2)\in S^2$ is the midpoint between $z_1$ and $z_2$. Then we replace $P_0$ with
-% $$P_0^{(\ell)}=p^*\omega^{(\ell)}/2\pi i.$$
+% $$P_0^{(\ell)}=r^*\omega^{(\ell)}/2\pi i.$$
 % In other words, we regularize our integrals by preventing the projections of the points on $S^2$ to be closer than $\ell$. Now all the integrals $\alpha_{\Gamma,V_+}^{(\ell)}$ converge absolutely, as explained in [KONTSEVICH].
 
 
@@ -458,7 +458,7 @@ To get its divergent part, we use the following lemma which can be proved by a s
 \begin{lem}\label{lem:CS}
 If $\ell_1,\ell_2:S^2\to(0,\infty)$ are smooth, $\alpha,\beta\in\Omega(B^3)$, and if $p_1$ and $p_2$ are the projections $\cf_2(B^3)\to B^3$, then
 \begin{multline*}
-\lim_{\epsilon\to0_+}\int_{\cf_2(B^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;P_0\bar P_0\;p_1^*\alpha\; p_2^*\beta\\
+\lim_{\epsilon\to0_+}\int_{\cf_2(B^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;P_0\bar P_0\;p_1^*\alpha\; p_2^*\beta\\
 =-\frac1{2\pi} \int_{S^2}\log(\ell_1/\ell_2)\;(\alpha^{(1)}|_{S^2})\,*(\beta^{(1)}|_{S^2}) 
 \end{multline*}
 where $\alpha^{(1)}$ is the 1-form part of $\alpha$ and $*$ is the Hodge $*$ on $S^2$.
@@ -471,13 +471,13 @@ We thus have
 where $A_\pm$ is the component of $A$ with the values in $V_\pm$. Notice that on $S^2$ we have $A^{(1)}_+A^{(1)}_+=A^{(1)}_-A^{(1)}_-=0$ because of the boundary condition, which explains why only the diagram $D$ appears in the result.
 
 \subsection{RG flow of $V_+$}\label{ss:RGflow}
-If the generalized Ricci tensor $T_{D}$ is non-zero, the limit $\lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}$ doesn't exist.
+If the generalized Ricci tensor $-T_{D}\in V_+\otimes V_-$ is non-zero, the limit $\lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}$ doesn't exist.
 From \eqref{conf-anom} we get
 \begin{equation}\label{Seff-asymp}
   \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A)= -\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra.  
 \end{equation}
 
-To get a meaningful effective action in the limit we have to renormalize $V_+$, i.e.\ to suppose that $V_+(\epsilon)\subset\g$ is a function of $\epsilon$ such that
+To get a meaningful effective action in the limit $\epsilon\to0$ we have to renormalize $V_+$, i.e.\ make $V_+(\epsilon)\subset\g$  a function of $\epsilon$ such that
 $$
 \lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A,V_+(\epsilon))
 $$
@@ -514,7 +514,7 @@ V_+(\epsilon+d\epsilon)=\bigl(1+\frac{d\epsilon}\epsilon\,\hbar\, B\bigr)V_+(\ep
 $$-\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra -\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
 and so we can set
 \begin{equation}
-B=-\frac1\pi (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
+B=-\frac1{2\pi} (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
 \end{equation}
 We thus found the 1-loop RG flow of $V_+$ in our model, with $\hbar B$ playing the role of the $\beta$-function. 
 \end{subequations}
@@ -661,10 +661,10 @@ in our model. Moreover, a conformal invariance should also require a kind of a d
 \subsection{AKSZ models, higher dualities, and RG flow}
 The link between the Poisson-Lie T-duality of 2-dim $\sigma$-models and the 3-dim Chern-Simons (or Courant) theory has a natural generalization to higher dimensions, when (possibly higher gauge) $n$-dim models are obtained from boundary conditions of $n+1$-dim topological models, namely of $n+1$-dim AKSZ model \cite{AKSZ}. We refer the reader to \cite{PSV} for details.
 
-In this case we have a dg symplectic manifold $X$ with symplectic form of degree $n$. If $M$ is a $n+1$-dim manifold with a boundary $\Sigma$, a boundary condition for the AKSZ model is an dg exact Lagrangian submanifold $\mc F$ in the symplectic space of all boundary fields
+The AKSZ model is constructed out of a dg symplectic manifold $X$ with symplectic form of degree $n$ ($X=\g[1]$ in the case of Chern-Simons theory). If $M$ is a $n+1$-dim manifold with a boundary $\Sigma$, a boundary condition for the AKSZ model is a dg exact Lagrangian submanifold $\mc F$ in the symplectic space of all boundary fields
 $$\mc X:=\on{Maps}(T[1]\Sigma,X).$$
 
-While the AKSZ model is topological, the boundary condition $\mc F$ might be not (as was the case of the boundary condition given by a generalized metric). In particular, under perturbative quantization, $\mc F$ might be scale dependent, i.e.\ at least naively we should expect a vector field (the RG flow) on the space (the exact Lagrangian Grassmannian) $\mc{G}_\mc X$ of all $\mc F$'s.
+While the AKSZ model is topological, the boundary condition $\mc F$ might be not (as was the case of the $V_+$-boundary condition). In particular, under perturbative quantization, $\mc F$ might be scale dependent, i.e.\ at least naively we should expect a vector field (the RG flow) on the space (the exact Lagrangian Grassmannian) $\mc{G}_\mc X$ of all $\mc F$'s.
 
 Let us only describe how to calculate the RG flow.
 Since for any $\mc F\in\mc{G}_\mc X$ we have
@@ -682,7 +682,7 @@ the RG flow should assign a function on $\mc F$, i.e.\ a functional on the space
 \subsection{Chern-Simons}
 Let us prove Lemma \ref{lem:CS}. In place of the ball $B^3$ we shall be using the closed upper half space $H^3$ (with the boundary identified with $\C$), and we shall suppose that $\alpha$ and $\beta$ are compactly supported. We shall use the following coordinates on $\cf_2(H^3)$: if $(q_1,q_2)\in\cf_2(H^3)$, let $(z,z+u):=p(q_1,q_2)\in\C^2$, and let the vertical projections of $q_1$ and $q_2$ to the plane be $z+t_1u$ and $z+t_2u$, $0\leq t_1<t_2\leq1$. We want to compute
 $$I:=
-\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac1{4\pi^2}\,\frac{dz\,du\,d\bar z\,d\bar u}{|u|^4}\,p_1^*\alpha\, p_2^*\beta
+\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac1{4\pi^2}\,\frac{dz\,du\,d\bar z\,d\bar u}{|u|^4}\,p_1^*\alpha\, p_2^*\beta
 $$
 
 Supposing that $\alpha$ and $\beta$ are 1-forms, let us write $\alpha$ as $\alpha=a_+dz + a_-d\bar z + a_h dh$, where $h$ is the height coordinate on $H^3$, and similarly 
@@ -693,11 +693,11 @@ p_2^*\beta&=b_+\, d(z+t_2 u) + b_-\, d(\bar z + t_2\bar u)
 \end{align*}
 and so
 \begin{multline*}
-I=-\frac1{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dz\,d\bar z\,dt_1\,dt_2\,(a_+b_-+a_-b_+) \\
-=\frac i{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dt_1\,dt_2\,\alpha *\beta.
+I=-\frac1{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dz\,d\bar z\,dt_1\,dt_2\,(a_+b_-+a_-b_+) \\
+=\frac i{4\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}\,dt_1\,dt_2\,\alpha *\beta.
 \end{multline*}
 The integral of 
-$$p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}$$
+$$r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;\frac{du\,d\bar u}{|u|^2}$$
 gives $-4\pi i\log(\ell_1/\ell_2)$, the integral of $dt_1\,dt_2$ gives $1/2$, and the orientation changes the sign, so in the end
 $$I=-\frac1{2\pi}\int_\C\log(\ell_1/\ell_2)\,\alpha*\beta$$
 as we wanted to show.
@@ -730,20 +730,20 @@ Let us compute the divergent part of the first one (the second one is similar).
 
 Given $\alpha\in\Omega^2(\C)$ with a compact support, we want to find
 $$J:=
-\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;P_0P_1\,p_2^*\alpha.
+\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})\;P_0P_1\,p_2^*\alpha.
 $$
 Using the same coordinates as above, we have
 $$P_1=\frac1{4\pi i}(\frac{du}u - \frac{d\bar u}{\bar u})\,dt_1$$
 so
 $$
-J=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
+J=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
 \frac{dz\,du}{u^2}\,\frac{d\bar u}{\bar u}\,dt_1\,p_2^*\alpha
 $$
 Writing $\alpha$ as $\alpha=f\,dz\,d\bar z$ (we can again ignore the vertical component of $\alpha$) we then get
 \begin{align*}
-J&=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
+J&=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
 \frac{dz\,du}{u^2}\,\frac{d\bar u}{\bar u}\,dt_1\,f\,u\,dt_2\,d\bar z\\
-&=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}p^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
+&=\frac1{8\pi^2}\lim_{\epsilon\to0_+}\int_{\cf_2(H^3)}r^*(H_{\epsilon\ell_1}-H_{\epsilon\ell_2})
 \frac{du\,d\bar u}{|u|^2}\,dt_1\,dt_2\,\alpha=-\frac1{4\pi i} \int_\C\log(\ell_1/\ell_2)\,\alpha.
 \end{align*}
 The prefactor $1/4\pi$, as compared to the prefactor $1/2\pi$ in $I$, is responsible for the coefficients $1/2$ in  \eqref{ggric}.
@@ -780,7 +780,7 @@ This behaviour follows from a simple scaling argument: the propagators are scale
 \bibitem{SST} Siampos Sfetsos Thompson 
 \bibitem{S} Ševera CS
 \bibitem{SV} Ševera Valach
-\bibitem{SV} Ševera Valach II
+\bibitem{SV2} Ševera Valach II
 \bibitem{W} Witten CS
 
 
