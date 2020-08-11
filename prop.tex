@@ -58,13 +58,62 @@
 \newcommand{\todo}{\textbf{TODO}}
 
 
-
-\title{Generalized Ricci tensor and the boundary of Chern-Simons theory}
-
-
+\title[RG flow on Chern-Simons boundary]{RG flow on Chern-Simons boundary, generalized Ricci tensor, and Poisson-Lie T-duality}
+%\title{Generalized Ricci tensor and the boundary of Chern-Simons theory}
+\thanks{Supported in  by  the  NCCR SwissMAP of the Swiss National Science Foundation.}
+\author{Ján Pulmann}
+\address{Section of Mathematics, University of Geneva, Switzerland}
+\email{jan.pulmann@unige.ch}
+\author{Pavol \v{S}evera}
+\address{Section of Mathematics, University of Geneva, Switzerland}
+\email{pavol.severa@gmail.com}
+\author{Donald R. Youmans}
+\address{??}
+\email{??}
 \begin{document}
 
+
+
 \maketitle
+
+\begin{abstract}
+We find a Chern-Simons propagator on the ball with the chiral boundary condition. We use it to study perturbatively Chern-Simons boundary conditions related to 2-dim $\sigma$-models and to Poisson-Lie T-duality. In particular, we find their renormalization group flow, given by the generalized Ricci tensor. Finally we briefly discuss what happens when the Chern-Simons theory is replaced by a Courant $\sigma$-model or possibly by a more general AKSZ model.
+\end{abstract}
+
+\section{Introduction}
+The chiral boundary condition, introduced by Witten in his famous work \cite{W}, is probably the most useful boundary condition of Chern-Simons theory. Roughly speaking, it requires the boundary $\Sigma$ of the 3-manifold $M$ to be a Riemann surface and the connection $A\in\Omega^1(M,\g)$ to be in 
+$$\Omega^{1,0}(\Sigma,\g)$$
+when restricted to $\Sigma$. The boundary field theory thus obtained is the chiral WZW model.
+
+There is a straightforward generalization of the chiral boundary condition, introduced in \cite{S}, linking Chern-Simons theory to other 2-dim $\sigma$-models. It needs an orthogonal splitting $\g=V_+\oplus V_-$ to a pair of vector subspaces, and the corresponding $V_+$-boundary condition requires the restriction of $A$ to be in $$\Omega^{1,0}(\Sigma,V_+)\oplus\Omega^{0,1}(\Sigma,V_-).$$
+
+To get a 2-dim $\sigma$-model we then need to consider the CS theory on $\Sigma\times[0,1]$, with the $V_+$-condition on $\Sigma\times\{0\}$, and with a topological boundary condition on $\Sigma\times\{1\}$ given by a Lagrangian Lie subalgebra $\h\subset\g$. This ``Chern-Simons sandwich'' is equivalent to a 2-dim $\sigma$-model with the target $G/H$. Different choices of $\h$  give different targets, all of them linked by Poisson-Lie T-duality (the usual T-duality corresponds to $G$ being a torus).
+
+It is thus natural to study the $V_+$-boundary condition, since that's where the dynamical degrees of freedom of the $\sigma$-models live. For a general $V_+$ this condition is not conformally invariant, and we should expect to get a RG flow of the boundary condition, i.e.\ of the subspace $V_+\subset\g$. It should give us the RG flow (i.e.\ the Ricci flow) of the 2-dim $\sigma$-models, independent of $\h$; indeed, the RG flow should only affect $V_+$, and not the CS theory itself or its topological boundary conditions.
+
+In this work we study perturbatively the CS theory with the $V_+$-boundary condition on a ball. We find a natural $SL_2(\C)$-invariant propagator \eqref{gmprop}, which is of independent interest as it applies also to the chiral boundary condition. It turns out that only one 1-loop diagram is divergent \eqref{eyediagram}, giving rise to the Weyl anomaly \eqref{conf-anom} on the boundary sphere, and to the RG flow \eqref{RG} of $V_+$. This RG flow is given by the so called generalized Ricci tensor, which thus gets a natural meaning via the CS theory. The RG flow also agrees to the one found in \cite{SST} for a certain 2-dim model which can be seen, in some sense, as a Hamiltonian version of the $V_+$-boundary condition.
+
+At the end of the paper we briefly discuss what happens when the CS theory is replaced with a more general Courant $\sigma$-model, and we still get that the RG flow of the boundary condition is given by the generalized Ricci tensor (which is the usual Ricci tensor in the case of exact Courant algebroids). We also briefly mention how to deal with the RG flow of boundary conditions of more general TFTs of the AKSZ type.
+
+--------------------------------------
+
+The main results of this paper are the following:
+\begin{enumerate}
+	\item We construct a propagator $P$ compatible with the $V_{+}$-boundary
+	condition. It is given by the pullback of $\frac{dz_1\wedge dz_2}{(z_1-z_2)^2}\ \in\ \Omega^2(\cf_2(\CP))$,
+	using the endpoints of the hyperbolic geodesic passing through two points in $B^{3}$.
+	See section \ref{ssec:Propagator} and Equation \eqref{gmprop} for details.
+	
+	\item Using this propagator to perturbatively study the Chern-Simons theory with the $V_{+}$-boundary
+	condition, we obtain the (1-loop) conformality condition for {\color{green} FOR WHAT?} of 
+	Siampos, Sfetsos and Thompson \cite{SST}. The condition is the vanishing of the diagram \eqref{eyediagram},
+	computed in the Lie algebra $\g$.
+	{\color{green} write it out in indices/with a diagram?}
+	
+	\item More generally, away from the conformal theory, we get the (1-loop) $\beta$ function
+	\eqref{beta} describing the flow of the boundary condition $V_{+}\in \g$.
+\end{enumerate}
+
 
 \section{Chern-Simons propagator with the chiral boundary condition}
 
@@ -96,7 +145,7 @@ be the subbcomplex given by the boundary condition
 $$\Omega_{(-)}(S^2):=\Omega^{0,1}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
 
 
-\subsection{Propagator}
+\subsection{Propagator}\label{ssec:Propagator}
 The propagator we are looking for should be a degree $-1$ map 
 $$h\colon\Omega_b(B^3)\to\Omega_b(B^3)$$
 such that
@@ -140,12 +189,12 @@ $$
 We thus obtain a map
 $$r\colon\cf_2(B^3)\to \cf_2(\CP),\quad r(q_1,q_2):=(z_1,z_2)$$
 and we set 
-\begin{equation}
+\begin{equation}\label{P0}
 P_0:=r^*\omega/2\pi i.
 \end{equation}
 
 
-One can easily see that $P_0$ has the required properties. In particular, if we fix one of the two points in $B^3$ to be in the center, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries.
+One can easily see that $P_0$ has the required properties. In particular, if we fix $q_1$  to be the center of $B^3$, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries.
 
 \begin{rem}
 In the usual setup of BV quantization one needs to choose a Lagrangian submanifold in the space of fields and restrict the path integral to this submanifold. The corresponding homotopy $h$ then satisfies $h^2=0$. We do not verify this relation for our $h$; as explained to \cite{CM}, it is not necessary.
@@ -165,7 +214,7 @@ i.e.\ the  space of fields with this boundary condition is
 $$\bigl(\Omega_{b}(B^3)[1]\otimes V_+\bigr) \oplus \bigl(\Omega_{\bar b}(B^3)[1]\otimes V_-\bigr)\subset \Omega(B^3)[1]\otimes\g.
 $$
 
-The propagator is
+The corresponding propagator is
 \begin{equation}\label{gmprop}
 P=P_0\otimes t_+ + \bar P_0\otimes t_-\in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)
 \end{equation}
@@ -185,6 +234,9 @@ Let us now consider the $V_+$-boundary condition for an arbitrary compact orient
 \end{align*}
 The $V_+$-boundary condition is then given by the subcomplex
 $$\bigl(\Omega_{(+)}(\Sigma)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(\Sigma)\otimes V_-\bigr) \subset\Omega(\Sigma)\otimes\g.$$
+The action functional is the usual Chern-Simons functional
+$$S(A)=\int_M \frac 12 \la A,dA\ra + \frac16 \la A,[A,A]\ra,$$
+without any boundary term.
 
 % We then let 
 % $$\Omega_{b}(M),\,\Omega_{\bar b}(M)\subset\Omega(M)$$
@@ -206,9 +258,7 @@ $$\bigl(\Omega_{(+)}(\Sigma)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(\Sigma)\
 % \bigl(\Omega_{(+)}(\Sigma)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(\Sigma)\otimes V_-\bigr)\subset \Omega(\Sigma)\otimes\g.
 % \end{equation}
 % Our BV space of fields is the subcomplex of $\Omega(M)\otimes\g$ of the forms whose restriction to $\Sigma$ is in \eqref{genbc}. 
-The action functional is the usual Chern-Simons functional
-$$S(A)=\int_M \frac 12 \la A,dA\ra + \frac16 \la A,[A,A]\ra,$$
-without any boundary term.
+
 
 % The case of $V_+=\g$, $V_-=0$, is the usual chiral boundary condition from the CS/WZW correspondence. Let us observe that \eqref{genbc} is (at least classically) a valid boundary condition, being a dg Lie subalgebra which is Lagrangian w.r.t.\ the natural pairing on $\Omega(\Sigma)\otimes\g$.
 
@@ -247,7 +297,7 @@ $$
 (3.6,0.8)--node[right]{$\gamma_3$}+(sh) (4.5,0.4)--node[right]{$\gamma_4$}+(sh);
 \draw (0,0)--(5,0)--(6,1)--(1,1)--cycle;
 \draw[yshift=-1.3cm] (0,0)--(5,0)--(6,1);
-\draw (0,0)--+(sh) (5,0)--+(sh) (6,1)--node[right]{$\Sigma\times I$}+(sh);
+\draw (0,0)--+(sh) (5,0)--+(sh) (6,1)--node[right]{$\Sigma\times [0,1]$}+(sh);
 
 \begin{scope}[yshift=-2.5cm]
 \draw[fill=black!5!white] (0,0)--(5,0)--(6,1)--(1,1)--cycle;
@@ -264,13 +314,15 @@ $$
 In particular, if $\g_0$ is a simple compact Lie algebra and $\g=\g_0\oplus\bar\g_0$, where $\bar\g_0$ stands for $\g_0$ with the opposite inner product, we can take 
 $$V_+=\g_0,\ V_-=\bar\g_0,\ \h=\text{diagonal }\g_0$$
 and the corresponding $\sigma$-model is then the WZW model with the group $G_0$ (not just chiral, but full). We are, however, interested in more general examples, where $V_+$ and $V_-$ are not necessarily Lie subalgebras of $\g$.
-
+\begin{rem}
+We have been somewhat vague about the groups $G$ and $H$ corresponding to the Lie algebras $\g$ and $\h$ and our spaces of fields were appropriate only for trivial $G$-bundles. Let us remark that the $V_+$-boundary condition requires a trivialization of the bundle over $\Sigma$ (the $\h$-boundary condition requires a reduction of the structure group over $\Sigma$ from $G$ to $H$). Chern-Simons theory needs a multiplicative $U(1)$-gerbe over $G$; the required data for $H$ is a trivialization of this multiplicative gerbe over $H$. This then gives rise to a gerbe over $G/H$, which is used for the global definition of the 2-dim $\sigma$-model.
+\end{rem}
 
 \subsection{Poisson-Lie T-duality}
 
 Let us now fix $V_+\subset\g$ and choose two Lagrangian Lie subalgebras $\h,\h'\subset\g$. The above-described boundary conditions then give us two 2d $\sigma$-models with the targets $G/H$ and $G/H'$. These two $\sigma$-models are called \emph{Poisson-Lie T-dual} \cite{KSe} to each other. While they are not completely equivalent (the topological boundary conditions are different, one given by $\h$ and the other by $\h'$), they differ only by topological degrees of freedom.
 
-In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian and $G=\g/\Lambda$ is a torus ($\Lambda\subset\g$ is a lattice), and also $H,H'\subset G$ are required to be tori. For a suitable choice of $\Lambda$ the seemingly different topological boundary conditions, given by $\h$ and $\h'$, actually coincide on the quantum level \cite{KSa}. This implies that the two $\sigma$-models, with the targets $G/H$ and $G/H'$, are truly equivalent. Such a statement is not (yet) known for non-abelian $G$'s. 
+In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian and $G=\g/\Lambda$ is a torus ($\Lambda\subset\g$ is a lattice), and also $H,H'\subset G$ are required to be tori. For a suitable choice of $\Lambda$ the seemingly different topological boundary conditions, given by $\h$ and $\h'$, actually coincide on the quantum level \cite{KSa}. This implies that the two $\sigma$-models, with the targets $G/H$ and $G/H'$, are truly equivalent. Such a statement is not (yet) known for any non-abelian $G$. 
 
 \section{Diagramatics, RG flow, and the Generalized Ricci tensor}\label{sec:diag}
 In this section we shall study perturbatively the Chern-Simons theory on the ball $B^3$ with the $V_+$-boundary condition.
@@ -383,7 +435,7 @@ $$\lim_{\epsilon\to 0_+}w_{\Gamma}^{(\epsilon\ell)}$$
 exists and is independent of $\ell$. 
 
 We shall see in a moment that the only divergent 1-loop 1PI diagram is 
-$$
+\begin{equation}\label{eyediagram}
 D:=
 \begin{tikzpicture}[scale=0.6, baseline=-0.6ex]
 \coordinate (u) at (-0.5,0);
@@ -396,7 +448,7 @@ D:=
 \draw (x) to[bend left] (plus) (plus)to[bend left] (y)
       (x) to[bend right] (minus) (minus)to[bend right] (y) ;
 \end{tikzpicture}
-$$
+\end{equation}
 %Indeed, one can check that all the 1-loop 1PI diagrams with at least 3 leaves converge. Among the diagrams with 2 leaves, if
 %we have two $+$'s or two $-$'s in the internal loop then the integrant is identically zero, as $P_0^2=0$ (which follows from $\omega^2=0$). We shall see that the leaves must have opposite signs in a moment.
 As a result, the 1-loop condition for conformal invariance is 
@@ -466,7 +518,7 @@ where $\alpha^{(1)}$ is the 1-form part of $\alpha$ and $*$ is the Hodge $*$ on 
 We thus have
 \begin{multline}\label{conf-anom}
 \lim_{\epsilon\to0_+}\Bigl( S_\text{eff}^{(\epsilon\ell_1),\text{1-loop}}(A) - S_\text{eff}^{(\epsilon\ell_2),\text{1-loop}}(A)\Bigr)\\
-=-\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D}, A^{(1)}_+ A^{(1)}_-\ra
+=\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D}, A^{(1)}_+ A^{(1)}_-\ra
 \end{multline}
 where $A_\pm$ is the component of $A$ with the values in $V_\pm$. Notice that on $S^2$ we have $A^{(1)}_+A^{(1)}_+=A^{(1)}_-A^{(1)}_-=0$ because of the boundary condition, which explains why only the diagram $D$ appears in the result.
 
@@ -474,7 +526,7 @@ where $A_\pm$ is the component of $A$ with the values in $V_\pm$. Notice that on
 If the generalized Ricci tensor $-T_{D}\in V_+\otimes V_-$ is non-zero, the limit $\lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}$ doesn't exist.
 From \eqref{conf-anom} we get
 \begin{equation}\label{Seff-asymp}
-  \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A)= -\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra.  
+  \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A)= \frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra.  
 \end{equation}
 
 To get a meaningful effective action in the limit $\epsilon\to0$ we have to renormalize $V_+$, i.e.\ make $V_+(\epsilon)\subset\g$  a function of $\epsilon$ such that
@@ -506,15 +558,15 @@ $$-\frac12\int_{S^2}\la \delta R,AA\ra$$
 instead.
 
 Now we can interpret \eqref{RG-howto}: if 
-\begin{subequations}
+\begin{subequations}\label{RG}
 \begin{equation}
 V_+(\epsilon+d\epsilon)=\bigl(1+\frac{d\epsilon}\epsilon\,\hbar\, B\bigr)V_+(\epsilon)
 \end{equation}
  for a suitable $B\in\bw^2\g$, then \eqref{RG-howto} gives us (in the limit $\epsilon\to0$)
-$$-\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra -\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
-and so we can set
+$$\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra -\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
+and so we get
 \begin{equation}
-B=-\frac1{2\pi} (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
+B=\frac1{2\pi} (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
 \end{equation}
 We thus found the 1-loop RG flow of $V_+$ in our model, with $\hbar B$ playing the role of the $\beta$-function. 
 \end{subequations}
@@ -526,7 +578,7 @@ In this section we shall very briefly summarize natural generalizations of what 
 Chern-Simons theory with the boundary condition given by a generalized metric $V_+\subset\g$ has a natural generalization to a Courant $\sigma$-model (again a 3-dim TFT) with a boundary condition given, again, by a generalized metric in the corresponding Courant algebroid. Such a model is needed for a formulation of the Poisson-Lie T-duality with spectators. Moreover, if the Courant algebroid is exact, this model is directly equivalent to a 2-dim $\sigma$-model.
 
 \subsubsection{Courant $\sigma$-model}
-Let us describe Courant $\sigma$-models supposing that the underlying Courant algebroid is a trivial vector bundle and that its base is a vector space (this trivialization is a part of our gauge fixing); we refer the reader to [WHERE?] for an invariant and global description. 
+Let us describe Courant $\sigma$-models supposing that the underlying Courant algebroid is trivial as a vector bundle and that its base is a vector space (this trivialization is a part of our gauge fixing); we refer the reader to {\color{red}[WHERE? Roytenberg?]} for an invariant and global description. 
 
 We need a vector space $W$ (the base of the Courant algebroid) and another vector space $V$ with an (indefinite) inner product (the fibre of the Courant algebroid). Finally, we need a function $C$ of degree 3 on the graded symplectic manifold 
 $$W\oplus V[1]\oplus W^*[2]$$
@@ -535,7 +587,7 @@ $$C(x,\theta,p)=\frac16\,c_{abc}(x)\,\theta^a\theta^b\theta^c + \rho^i_a(x)\,p_i
 
 If now $M$ is a closed oriented 3-manifold, the space of fields of the Courant $\sigma$-model on $M$ is
 $$\Omega(M,W)\oplus\Omega(M,V)[1]\oplus\Omega(M,W^*)[2]$$
-(with the 3 component still denoted by $x$, $\theta$, and $p$)
+(with the 3 components still denoted by $x$, $\theta$, and $p$)
 and the action functional is
 $$S(x,\theta,p)=\int_M\la p,dx\ra + \frac12 \la\theta,d\theta\ra + C(x,\theta,p).$$
 
@@ -579,7 +631,7 @@ where $\omega_{S^2}$ is the area form on $S^2$ and $r_1\colon\cf_2(H^3)\to S^2$ 
 
 
 \subsubsection{Diagramatics}
-Let us pick a point $x_0\in W$ around which we shall to the perturbative expansion. We have two types of vertices
+Let us pick a point $x_0\in W$ around which we shall do the perturbative expansion. We have two types of vertices
 $$
 \begin{tikzpicture}[scale=0.6]
 \draw(0,0)--(1,0)(0,0)--(-0.5,0.866)(0,0)--(-0.5,-0.866);
@@ -638,7 +690,7 @@ This expression is, up to the sign, the \emph{generalized Ricci tensor} of the g
 Let us be more precise about the appearance of $T_{D'}$: we have
 \begin{multline*}
 \lim_{\epsilon\to0_+}\Bigl( S_\text{eff}^{(\epsilon\ell_1),\text{1-loop}}(x,\theta,p) - S_\text{eff}^{(\epsilon\ell_2),\text{1-loop}}(x,\theta,p)\Bigr)\\
-=-\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D'}(x), \theta^{(1)}_+ \theta^{(1)}_-\ra  
+=\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D'}(x), \theta^{(1)}_+ \theta^{(1)}_-\ra  
 \end{multline*}
 where $T_{D'}(x)$ denotes $T_{D'}$ computed with $c$'s and $\rho$'s at the point $x\in W$.  {\color{red} THE SHIFT OF $x_0$ TO $x$ GIVEN BY TAYLOR SERIES - LOOKS FISHY.}
 \end{rem}
