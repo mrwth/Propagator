@@ -9,6 +9,8 @@
 \usepackage{amssymb,mathtools}
 %\usepackage{lmodern}
 %\usepackage[T1]{fontenc}
+%REMOVE AFTERWARDS
+\usepackage{svg}
 
 \tikzset{->-/.style={decoration={
   markings,
@@ -58,9 +60,9 @@
 \newcommand{\todo}{\textbf{TODO}}
 
 
-\title[RG flow of Chern-Simons boundary conditions]{Renormalization group flow of Chern-Simons boundary conditions and the generalized Ricci tensor}
+\title[RG flow on Chern-Simons boundary]{RG flow on Chern-Simons boundary, generalized Ricci tensor, and Poisson-Lie T-duality {Jan's version}}
 %\title{Generalized Ricci tensor and the boundary of Chern-Simons theory}
-\thanks{Supported in part by the  NCCR SwissMAP of the Swiss National Science Foundation.}
+\thanks{Supported in part by the  NCCR SwissMAP of the Swiss National Science Foundation. D.\ R.\ Youmans was further supported by the National Center for Competence in Research (NCCR) SwissMAP grant 178794}
 \author{Ján Pulmann}
 \address{Section of Mathematics, University of Geneva, Switzerland}
 \email{jan.pulmann@unige.ch}
@@ -81,13 +83,13 @@ We find a Chern-Simons propagator on the ball with the chiral boundary condition
 \end{abstract}
 
 \section{Introduction}
-The chiral boundary condition, introduced by Witten in his famous work \cite{W}, is arguably the most useful boundary condition of Chern-Simons theory. Roughly speaking, it needs the boundary $\Sigma$ of the 3-manifold $M$ to be a Riemann surface and it requires the connection $A\in\Omega^1(M,\g)$ to be in
+The chiral boundary condition, introduced by Witten in his famous work \cite{W}, is probably the most useful boundary condition of Chern-Simons theory. Roughly speaking, it needs the boundary $\Sigma$ of the 3-manifold $M$ to be a Riemann surface and it requires the connection $A\in\Omega^1(M,\g)$ to be in
 $\Omega^{1,0}(\Sigma,\g)$
 when restricted to $\Sigma$. The boundary field theory thus obtained is the chiral WZW model.
 
-There is a straightforward generalization of the chiral boundary condition, introduced in \cite{S}, linking Chern-Simons theory to other 2-dim $\sigma$-models and to Poisson-Lie T-duality. Given an orthogonal splitting $\g=V_+\oplus V_-$ to a pair of vector subspaces, such that the pairing on $\g$ is positive definite on $V_+$ and negative definite on $V_-$, the corresponding \emph{$V_+$-boundary condition} requires the restriction of $A$ to $\Sigma$ to be in $$\Omega^{0,1}(\Sigma,V_+)\oplus\Omega^{1,0}(\Sigma,V_-).$$
+There is a straightforward generalization of the chiral boundary condition, introduced in \cite{S}, linking Chern-Simons theory to other 2-dim $\sigma$-models and to Poisson-Lie T-duality. Given an orthogonal splitting $\g=V_+\oplus V_-$ to a pair of vector subspaces, the corresponding $V_+$-boundary condition requires the restriction of $A$ to $\Sigma$ to be in $$\Omega^{1,0}(\Sigma,V_+)\oplus\Omega^{0,1}(\Sigma,V_-).$$
 
-To get a 2-dim $\sigma$-model we then need to consider the Chern-Simons theory on $\Sigma\times[0,1]$, with the $V_+$-boundary condition on $\Sigma\times\{0\}$, and with a topological boundary condition on $\Sigma\times\{1\}$ given by a Lagrangian Lie subalgebra $\h\subset\g$. %(We also need to suppose that the inner product on $\g$ is positive definite on $V_+$ and negative definite on $V_-$.) 
+To get a 2-dim $\sigma$-model we then need to consider the Chern-Simons theory on $\Sigma\times[0,1]$, with the $V_+$-boundary condition on $\Sigma\times\{0\}$, and with a topological boundary condition on $\Sigma\times\{1\}$ given by a Lagrangian Lie subalgebra $\h\subset\g$. (We also need to suppose that the inner product on $\g$ is positive definite on $V_+$ and negative definite on $V_-$.) 
 $$
 \begin{tikzpicture}
 \coordinate (sh) at (0,-1.3);
@@ -115,11 +117,9 @@ It is thus natural to study the $V_+$-boundary condition on its own, since that 
 
 For a general $V_+$ the conformal invariance of the $V_+$-boundary condition gets broken by perturbative quantization, and we should get a renormalization group (RG) flow of the boundary condition, i.e.\ of the subspace $V_+\subset\g$. It should give us the RG flow (i.e.\ the Ricci flow) of the 2-dim $\sigma$-models; indeed, the RG flow should only affect $V_+$, and not the bulk Chern-Simons theory or its topological boundary conditions.
 
-In this work we study perturbatively the Chern-Simons theory with the $V_+$-boundary condition on a ball. We find a natural $SL_2(\C)$-invariant propagator \eqref{gmprop}, which is of independent interest, as it applies also to the chiral boundary condition. It turns out that only one 1-loop diagram is divergent \eqref{eyediagram}, giving rise to the 1-loop Weyl anomaly \eqref{conf-anom} on the boundary sphere, and to the RG flow \eqref{RG} of $V_+$. This RG flow is given by the so called \emph{generalized Ricci tensor} \cite{CSW,G,JV,SV}, which thus gets a natural meaning via the Chern-Simons theory. The RG flow also agrees with the one found in \cite{SST} for a certain 2-dim model which can be seen, in some sense, as a Hamiltonian version of the $V_+$-boundary condition. As expected, it is compatible with the Ricci flow on the targets $G/H$, as shown already in \cite{SV}.
+In this work we study perturbatively the Chern-Simons theory with the $V_+$-boundary condition on a ball. We find a natural $SL_2(\C)$-invariant propagator \eqref{gmprop}, which is of independent interest, as it applies also to the chiral boundary condition. It turns out that only one 1-loop diagram is divergent \eqref{eyediagram}, giving rise to the 1-loop Weyl anomaly \eqref{conf-anom} on the boundary sphere, and to the RG flow \eqref{RG} of $V_+$. This RG flow is given by the so called generalized Ricci tensor \cite{CSW,G,SV,???}, which thus gets a natural meaning via the Chern-Simons theory. The RG flow also agrees with the one found in \cite{SST} for a certain 2-dim model which can be seen, in some sense, as a Hamiltonian version of the $V_+$-boundary condition. As expected, it is compatible with the Ricci flow on the targets $G/H$, as shown already in \cite{SV}.
 
-At the end of the paper we briefly discuss what happens when the Chern-Simons theory is replaced by a more general Courant $\sigma$-model; the RG flow of the boundary condition still turns out to be given by the generalized Ricci tensor \eqref{ggric} (which is the usual Ricci tensor in the case of exact Courant algebroids). We also briefly mention how to deal with the RG flow of boundary conditions of more general TFTs of the AKSZ type \cite{AKSZ} by computing the divergent part of the effective action \eqref{akszrg}.\bigskip
-
-\noindent\textbf{Acknowledgements.} We are grateful to A.\ Cattaneo, K.\ Gaw\c{e}dzki, P.\ Safronov, and especially to P.\ Mnev, for stimulating discussions.
+At the end of the paper we briefly discuss what happens when the Chern-Simons theory is replaced by a more general Courant $\sigma$-model; the RG flow of the boundary condition still turns out to be given by the generalized Ricci tensor \eqref{ggric} (which is the usual Ricci tensor in the case of exact Courant algebroids). We also briefly mention how to deal with the RG flow of boundary conditions of more general TFTs of the AKSZ type \cite{AKSZ} by computing the divergent part of the effective action \eqref{akszrg}.
 
 % <<JAN:
 % The main results of this paper are the following:
@@ -149,10 +149,10 @@ The (naive) space of fields of the Chern-Simons theory is $\Omega^1(B^3)\otimes\
 \subsection{Chiral boundary condition}
 The chiral boundary condition demands that the fields, when restricted to $\partial B^3 = S^2$, are in $\Omega^{1,0}(S^2)\subset\Omega^1(S^2)$ (using the standard complex structure on $S^2=\CP$). 
 
-Let us rephrase this boundary condition in the BV formalism, including ghosts (0-forms) and antifields (2-forms and 3-forms). Let 
+Let us rephrase this boundary condition in the BV formalism {\color{teal} (see e.g. \cite{PSV})}, including ghosts (0-forms) and antifields (2-forms and 3-forms). Let 
 $$\Omega_b(B^3)\subset\Omega(B^3)$$
 be the subcomplex of the forms whose restriction to $S^2$ is in
-$$\Omega_{(-)}(S^2):=\Omega^{1,0}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
+$$\Omega_{(+)}(S^2):=\Omega^{1,0}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
 Then our BV space of fields is
 $\Omega_b(B^3)[1]$.
 Let us observe that it is acyclic.
@@ -167,7 +167,7 @@ Let us observe that it is acyclic.
 For future reference, let 
 $$\Omega_{\bar b}(B^3)\subset\Omega(B^3)$$
 be the subbcomplex given by the boundary condition
-$$\Omega_{(+)}(S^2):=\Omega^{0,1}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
+$$\Omega_{(-)}(S^2):=\Omega^{0,1}(S^2)\oplus\Omega^2(S^2)\ \subset\ \Omega(S^2).$$
 
 
 \subsection{Propagator}\label{ssec:Propagator}
@@ -179,6 +179,7 @@ Moreover, $h$ should be given by an integral kernel
 $$P_0\in\Omega^2(\cf_2(B^3)),$$
 where
 $$\cf_2(B^3):=B^3\times B^3\setminus\text{diagonal}.$$
+{\color{teal} To preserve the boundary conditions, $P_{0}$ should be of the form $dz_{i}\wedge (\dots)$ when $q_{i}\in B^{3}$ is restricted to $S^{2} = \partial B^{3}$.}
 %and $P_0$ should only have a mild singularity at the diagonal of $B^3\times B^3$ (see \cite{AS, K}).
 
 Let us describe a suitable $P_0$ explicitly, using the natural $SL(2,\C)$-invariant holomorphic closed 2-form
@@ -216,32 +217,52 @@ and we set
 P_0:=r^*\omega/2\pi i.
 \end{equation}
 
-
+{\color{gray}
 One can easily see that $P_0$ has the required properties. In particular, if we fix $q_1$  to be the center of $B^3$, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries.
+}
+{\color{teal}
+By construction, $P_0$ is $SL(2,\C)$-invariant, where $SL(2,\C)$ acts on $B^3$ via the hyperbolic isometries. 
+ In particular, if we fix $q_1$  to be the center of $B^3$, $P_0$ becomes  the (normalized) area form on $S^2$ pulled back to $B^3\setminus\{\text{center}\}$ along the radii. 
+
+One can easily see that $P_0$ has the required properties.
+If for example $q_{1}=z_{1}\in \partial B^{3}$, we get $P_{0} = d z_{1} \wedge d z_{2}(q_{1}, q_{2}) /(z_{1}- z_{2})^{2}$, i.e. $h$ preserves $\Omega_{b}(B^{3})$. We show $dh + hd = 1$ via
+\begin{align*}
+&dh(\alpha) (r_{1}) = d_{r_{1}} \int_{r_{2}\in B^{3}}P_{0}(r_{1}, r_{2}) \alpha(r_{2}) 
+\\&= \int_{r_{2}\in B^{3}} (d - d_{r_{2}})(P_{0}(r_{1}, r_{2})) \alpha(r_{2})
+\\&= 
+ \int_{r_{2}\in B^{3}} dP_{0}(r_{1}, r_{2}) \alpha(r_{2}) 
+ -\int_{r_{2}\in S^{2}} P_{0}(r_{1}, r_{2}) \alpha(r_{2}) 
+ +\int_{r_{2}\in B^{3}} P_{0}(r_{1}, r_{2}) d\alpha(r_{2})
+\end{align*}
+The first term gives $\alpha(r_{1})$, since
+$P_{0}$ is closed away from the diagonal, and thus we can replace $\alpha$ by it's value
+at $r_{1}$. 
+The remaining integral of $dP_{0}$ is 1, since $P_{0}(r_{1}, r_{2})$ gives the area form on $S^{2}$, after acting with a suitable element of $SL(2, \mathbb C)$ sending $r_{1} \mapsto \text{center}$. The second term is zero by the boundary conditions for $\alpha$ and the third term equals $hd(\alpha)$. 
+}
 
 \begin{rem}
 In the usual setup of BV quantization one needs to choose a Lagrangian submanifold in the space of fields and restrict the path integral to this submanifold. The corresponding homotopy $h$ then satisfies $h^2=0$. We do not verify this relation for our $h$; as explained in \cite{CM}, it is not necessary.
 \end{rem}
 
 \subsection{The case of a non-trivial $\g$}
-For a general Lie algebra $\g$ with a non-degenerate invariant symmetric pairing (which is negative-definite in the usual case of compact semisimple $\g$'s), when the space of Chern-Simons fields with the chiral boundary condition is $\Omega_b(B^3,\g)[1]$, the propagator is simply
+For a general Lie algebra $\g$ with an invariant inner product, when the space of Chern-Simons fields with the chiral boundary condition is $\Omega_b(B^3)[1]\otimes\g$, the propagator is simply
 $$P=P_0\otimes t\in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)$$
-where $t\in\g\otimes\g$ is (the inverse of) the pairing on $\g$. 
+where $t\in\g\otimes\g$ is the (inverse of) the inner product on $\g$. 
 %We will not use this propagator in what follows, i.e.\ we will not study the CS/WZW correspondence perturbatively, but we will use its certain straightforward modification.
 \subsection{Generalized metrics}\label{sec:gm}
 Let us suppose that the Lie algebra $\g$ is split to an orthogonal sum
 $$\g=V_+\oplus V_-,\quad V_-=V_+^\perp$$
 of vector subspaces, with $\la,\ra|_{V_+}$ positive-definite and $\la,\ra|_{V_-}$ negative-definite. Such a splitting is called a \emph{generalized metric} on $\g$. We can use it to get  a minor generalization of the chiral boundary condition, which we shall call the \emph{$V_+$-boundary condition}: it is given by the subcomplex
-$$\Omega_{(+)}(S^2,V_+) \oplus \Omega_{(-)}(S^2,V_-) \subset\Omega(S^2,\g),$$
+$$\bigl(\Omega_{(+)}(S^2)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(S^2)\otimes V_-\bigr) \subset\Omega(S^2)\otimes\g,$$
 i.e.\ the  space of fields with this boundary condition is
-$$\Omega_{\bar b}(B^3,V_+)[1] \oplus \Omega_{ b}(B^3,V_-)[1]\subset \Omega(B^3,\g)[1].
+$$\bigl(\Omega_{b}(B^3)[1]\otimes V_+\bigr) \oplus \bigl(\Omega_{\bar b}(B^3)[1]\otimes V_-\bigr)\subset \Omega(B^3)[1]\otimes\g.
 $$
 
 The corresponding propagator is
 \begin{equation}\label{gmprop}
-P=\bar P_0\otimes t_+ +  P_0\otimes t_-\in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)
+P=P_0\otimes t_+ + \bar P_0\otimes t_-\in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)
 \end{equation}
-where $t_+\in V_+\otimes V_+$ and $t_-\in V_-\otimes V_-$ is the (inverse of) the pairing on $V_+$ and on $V_-$ respectively (we have $t = t_+ + t_-$).
+where $t_+\in V_+\otimes V_+$ and $t_-\in V_-\otimes V_-$ is the (inverse of) the inner product on $V_+$ and on $V_-$ respectively (we have $t = t_+ + t_-$).
 
 \medskip
 We shall study the $V_+$-boundary condition perturbatively in \S\ref{sec:diag}, where we shall find, in particular, the 1-loop RG flow of $V_+$. The motivation is described in \S\ref{sec:PL}, given by the relation with 2-dim $\sigma$-models and with Poisson-Lie T-duality.
@@ -249,7 +270,7 @@ We shall study the $V_+$-boundary condition perturbatively in \S\ref{sec:diag}, 
 
 \section{2d $\sigma$-models on the boundary of Chern-Simons and Poisson-Lie T-duality}\label{sec:PL}
 
-In this section we shall explain the link between the Chern-Simons theory with the $V_+$-boundary condition, 2-dim $\sigma$-models, and Poisson-Lie T-duality, following \cite{PSV,S}.
+In this section we shall explain the link between the Chern-Simons theory with the $V_+$-boundary condition, 2-dim $\sigma$-models, and Poisson-Lie T-duality, following \cite{S, PSV}.
 
 \subsection{A tale of two boundary conditions}
 % <<DONNY:
@@ -275,17 +296,17 @@ In the following, however, we will be only interested in two special boundary co
 \subsubsection{A (classically) topological boundary condition}
 Let us choose a Lagrangian Lie subalgebra $\h\subset\g$ (i.e.\ $\h^\perp=\h$) and let us consider the boundary condition given by the subcomplex
 \begin{equation}\label{h-bc}
-\Omega(\Sigma,\h)\subset\Omega(\Sigma,\g).
+\Omega(\Sigma)\otimes\h\subset\Omega(\Sigma)\otimes\g.
 \end{equation}
 This boundary condition doesn't use any geometric structure on $\Sigma$, so it is (classically) topological. %, unlike the $V_+$-boundary condition (see \S\ref{subsubsec:generalized_metrics_bc}). 
  We shall call it $\h$-boundary condition.
 
 %It should be noted that while the $V_+$-boundary condition completely removes the gauge symmetry on $\Sigma$, 
-The $\h$-boundary condition leaves us with a residual gauge symmetry on $\Sigma$, with gauge transformations taking values in $H$ (while in the bulk gauge transformations take values in $G$). The corresponding ghost fields are given by the 0-form part of the boundary condition, $\Omega^0(\Sigma,\h)$.
+The $\h$-boundary condition leaves us with a residual gauge symmetry on $\Sigma$, with gauge transformations taking values in $H$ (while in the bulk gauge transformations take values in $G$). The corresponding ghost fields are given by the 0-form part of the boundary condition, $\Omega^0(\Sigma)\otimes\h$.
 % This is reflected by the 0-form part of the boundary conditions, playing the role of ghosts - in the first case we have no ghosts on the boundary, and in the second case we have $\Omega^0(\Sigma)\otimes\h$. 
 
 \begin{rem}
-This boundary condition seems to have a 1-loop anomaly stemming from potential tadpole diagrams if $\h$ is not unimodular. Let us conjecture that we can still make sense of it by choosing an area form on $\Sigma$ up to a constant multiple, at the price that the boundary condition will no longer be topological (if true, the boundary condition would be ``rigid-scale invariant'', but not Weyl-invariant). Tadpoles in relation to unimodularity have also been discussed in \cite{CMR}.
+This boundary condition seems to have a 1-loop anomaly if $\h$ is not unimodular {\color{red} CITE BF THINGY MNEV ETC}. Let us conjecture that we can still make sense of it by choosing an area form on $\Sigma$ up to a constant multiple, at the price that the boundary condition will no longer be topological. 
 \end{rem}
 
 \subsubsection{Generalized metrics, again}\label{subsubsec:generalized_metrics_bc}
@@ -293,11 +314,11 @@ Let us now consider the $V_+$-boundary condition for an arbitrary compact orient
 % We need to endow $\Sigma$ with a conformal structure, and consider the subcomplexes
 We need to choose a conformal structure on $\Sigma$. 
 The $V_+$-boundary condition is then given by the subcomplex
-$$\Omega_{(+)}(\Sigma,V_+) \oplus \Omega_{(-)}(\Sigma,V_-) \subset\Omega(\Sigma,\g)$$
+$$\bigl(\Omega_{(+)}(\Sigma)\otimes V_+\bigr) \oplus \bigl(\Omega_{(-)}(\Sigma)\otimes V_-\bigr) \subset\Omega(\Sigma)\otimes\g$$
 where
 \begin{align*}
-\Omega_{(+)}(\Sigma)&:=\Omega^{0,1}(\Sigma)\oplus\Omega^2(\Sigma)\subset\Omega(\Sigma),\\
-\Omega_{(-)}(\Sigma)&:=\Omega^{1,0}(\Sigma)\oplus\Omega^2(\Sigma)\subset\Omega(\Sigma).
+\Omega_{(+)}(\Sigma)&:=\Omega^{1,0}(\Sigma)\oplus\Omega^2(\Sigma)\subset\Omega(\Sigma),\\
+\Omega_{(-)}(\Sigma)&:=\Omega^{0,1}(\Sigma)\oplus\Omega^2(\Sigma)\subset\Omega(\Sigma).
 \end{align*}
 
 % The action functional is the usual Chern-Simons functional
@@ -339,7 +360,7 @@ The boundary of $M$ has 2 components, $\Sigma\times\{0\}$ and $\Sigma\times\{1\}
 Let us impose the $V_+$-boundary condition on $\Sigma\times\{0\}$ and the $\h$-boundary condition on $\Sigma\times\{1\}$. The gauge transformations are thus trivial on $\Sigma\times\{0\}$ and take values in $H$ on $\Sigma\times\{1\}$. 
 %Note that the existence of a Lagrangian $\h\subset\g$ implies that $\dim V_+=\dim V_-$.
 
-As explained in \cite{PSV,S}, Chern-Simons theory on $M=\Sigma\times[0,1]$, with this choice of boundary conditions, is equivalent to a 2-dim $\sigma$-model with worldsheet $\Sigma$ and target space $G/H$. Namely, given points $z_1,\dots,z_n\in\Sigma$ and functions $f_1,\dots,f_n\in C^\infty(G/H)$, which we can see as $H$-invariant functions on $G$, we have the following equality of correlation functions:
+As explained in \cite{S,PSV}, Chern-Simons theory on $M=\Sigma\times[0,1]$, with this choice of boundary conditions, is equivalent to a 2-dim $\sigma$-model with worldsheet $\Sigma$ and target space $G/H$. Namely, given points $z_1,\dots,z_n\in\Sigma$ and functions $f_1,\dots,f_n\in C^\infty(G/H)$, which we can see as $H$-invariant functions on $G$, we have the following equality of correlation functions:
 \begin{equation}
 \bigl\la f_1(\phi(z_1))\dots f_n(\phi(z_n))\bigr\ra_{\sigma\text{-model}}= \bigl\la f_1(\on{hol}_{\gamma_1})\dots f_n(\on{hol}_{\gamma_n}) \bigr\ra_\text{Chern-Simons}.
 \end{equation}
@@ -370,14 +391,14 @@ In particular, if $\g_0$ is a simple compact Lie algebra and $\g=\g_0\oplus\bar\
 $$V_+=\g_0,\ V_-=\bar\g_0,\ \h=\text{diagonal }\g_0$$
 and the corresponding $\sigma$-model is then the WZW model with the group $G_0$ (not just chiral, but full). We are, however, interested in more general examples, where $V_+$ and $V_-$ are not necessarily Lie subalgebras of $\g$.
 \begin{rem}
-We have been somewhat vague about the groups $G$ and $H$ corresponding to the Lie algebras $\g$ and $\h$ and our spaces of fields were appropriate only for trivial $G$-bundles. To be a bit less vague, let us remark that the $V_+$-boundary condition requires a trivialization of the bundle over $\Sigma$ and the $\h$-boundary condition requires a reduction of the structure group over $\Sigma$ from $G$ to $H$. Chern-Simons theory needs a multiplicative $U(1)$-gerbe over $G$ \cite{CW}; the required data for $H$ is a trivialization of this multiplicative gerbe over $H$. This then gives rise to a gerbe over $G/H$, which is used for the global definition of the 2-dim $\sigma$-model.
+We have been somewhat vague about the groups $G$ and $H$ corresponding to the Lie algebras $\g$ and $\h$ and our spaces of fields were appropriate only for trivial $G$-bundles. To be a bit less vague, let us remark that the $V_+$-boundary condition requires a trivialization of the bundle over $\Sigma$ and the $\h$-boundary condition requires a reduction of the structure group over $\Sigma$ from $G$ to $H$. Chern-Simons theory needs a multiplicative $U(1)$-gerbe over $G$; the required data for $H$ is a trivialization of this multiplicative gerbe over $H$. This then gives rise to a gerbe over $G/H$, which is used for the global definition of the 2-dim $\sigma$-model.
 \end{rem}
 
 \subsection{Poisson-Lie T-duality}
 
 Let us now fix $V_+\subset\g$ and choose two Lagrangian Lie subalgebras $\h,\h'\subset\g$. The above-described boundary conditions then give us two 2d $\sigma$-models with the targets $G/H$ and $G/H'$. These two $\sigma$-models are called \emph{Poisson-Lie T-dual} \cite{KSe} to each other. While they are not completely equivalent (the topological boundary conditions are different, one given by $\h$ and the other by $\h'$), they differ only by topological degrees of freedom.
 
-In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian, $G=\g/\Lambda$ is a torus ($\Lambda\subset\g$ is a lattice), and $H,H'\subset G$ are required to be tori. For a suitable choice of $\Lambda$ the seemingly different topological boundary conditions, given by $\h$ and $\h'$, actually coincide on the quantum level \cite{KSa}. This implies that the two $\sigma$-models, with the targets $G/H$ and $G/H'$, are completely equivalent. Such a statement is not (yet) known for any non-abelian $G$.\footnote{The corresponding problem of extending the Morita equivalence of non-commutative tori \cite{RS} to Poisson homogeneous spaces suggests that the condition for full equivalence is that the corresponding quantum group is trivial; see \cite{Smor}.}
+In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian, $G=\g/\Lambda$ is a torus ($\Lambda\subset\g$ is a lattice), and $H,H'\subset G$ are required to be tori. For a suitable choice of $\Lambda$ the seemingly different topological boundary conditions, given by $\h$ and $\h'$, actually coincide on the quantum level \cite{KSa}. This implies that the two $\sigma$-models, with the targets $G/H$ and $G/H'$, are completely equivalent. Such a statement is not (yet) known for any non-abelian $G$. 
 
 \section{Diagramatics, RG flow, and the Generalized Ricci tensor}\label{sec:diag}
 % <<DONNY:
@@ -387,7 +408,7 @@ In the case of the usual (i.e.\ abelian) T-duality, $\g$ is abelian, $G=\g/\Lamb
 
  In this section we shall study perturbatively the Chern-Simons theory on the ball $B^3$ with the $V_+$-boundary condition, using the propagator \eqref{gmprop}. In particular, by studying  the short-distance behaviour close to $S^2$, we shall find the 1-loop Weyl anomaly of the $V_+$-boundary condition and the resulting RG flow of the subspace $V_+\subset\g$.
  
-Our motivation is the link with 2-dim $\sigma$-models and Poisson-Lie T-duality described above. Recall that this link needs Chern-Simons theory on a $\Sigma\times[0,1]$, with the $V_+$-boundary condition on $\Sigma\times\{0\}$ and with a topological boundary condition on $\Sigma\times\{1\}$. Notice, however, that the RG flow does not touch the bulk Chern-Simons theory and its topological boundary conditions, and being a short distance phenomenon, it is insensitive to the choice of $\Sigma$ and to the presence of other boundary components. Studying the ball model is thus sufficient for our purposes.
+Our motivation is the link with 2-dim $\sigma$-models and Poisson-Lie T-duality described above. Recall that this link needs Chern-Simons theory on a $\Sigma\times[0,1]$, with the $V_+$-boundary condition on $\Sigma\times\{0\}$ and with a topological boundary condition on $\Sigma\times\{1\}$. Notice, however, that the RG flow does not touch the bulk Chern-Simons theory and its topological boundary conditions, and being a short distance phenomenon, it is insensitive to the choice of $\Sigma$ and to the presence of other boundary components. Hence studying our ball model is sufficient.
 
 
 % Our motivation is the link with 2-dim $\sigma$-models and Poisson-Lie T-duality described above. We shall study  the short-distance behaviour close to $S^2$, and the resulting RG flow of the subspace $V_+\subset\g$ and the condition for conformal invariance. 
@@ -399,7 +420,9 @@ Our motivation is the link with 2-dim $\sigma$-models and Poisson-Lie T-duality 
 % $$P:=P_0\otimes t_+ + \bar P_0\otimes t_- \in \Omega^2\bigl(\cf_2(B^3),\g\otimes\g\bigr)$$
 % where $t_+\in V_+\otimes V_+$ and $t_-\in V_-\otimes V_-$ is the (inverse of) the inner product on $V_+$ and on $V_-$ respectively.
 
-In general, Feynman diagrams computed with the propagator \eqref{gmprop} diverge, so we need to introduce a regularization.
+{\color{gray} In general, Feynman diagrams computed with the propagator \eqref{gmprop} diverge, so we need to introduce a regularization.}
+
+{\color{teal} Because of the term $(z_{1}-z_{2})^{-2}$ in the propagator \eqref{gmprop}, some Feynman diagrams (e.g. \eqref{eyediagram}) diverge, so we need to introduce a regularization.}
 
 We choose a smooth cutoff function
 $$\ell\colon S^2\to(0,\infty)$$ and  we regularize our integrals by preventing the projections of the points to $S^2$ to be closer than $\ell$. One should think of $\ell^{-2}$ as of a factor scaling the standard Riemannian metric on $S^2$. 
@@ -419,8 +442,13 @@ A more natural choice (not using the spherical distance) is to declare that $\el
 Then we replace $P_0$ with
 $$P_0^{(\ell)}=r^*\omega^{(\ell)}/2\pi i$$
 and the propagator $P$ with
-$$P^{(\ell)}=\bar P_0^{(\ell)}\otimes t_+ +  P_0^{(\ell)}\otimes t_-$$
+$$P^{(\ell)}=P_0^{(\ell)}\otimes t_+ + \bar P_0^{(\ell)}\otimes t_-$$
  Now all the integrals converge absolutely, as explained in \cite{AS,K} using suitable compactifications of configuration spaces.
+
+\begin{figure}[h]
+	\includesvg[scale=0.5]{sketch.svg}
+	\caption{ {\color{teal} Orange zones should not overlap. Artist's impression. Remove svg package at the end!}}
+\end{figure}
 
 \subsection{Diagramatics}
 
@@ -434,12 +462,10 @@ $$G_k^{(\ell)}\in\Omega^k\bigl(\cf_k(B^3)\bigr)[\![\hbar]\!]\otimes\g^{\otimes k
 $$G_k^{(\ell)}(x_1,\dots,x_k)=\bigl\la A(x_1)A(x_2)\dots A(x_k)\bigr\ra^{(\ell)}$$
 in the usual way:
 
-If $\Gamma$ is a tadpole-free%
-\footnote{The Lie algebra factors $T_{\Gamma}$ (see below) vanish for any diagram with a tadpole, because of the 
-antisymmetry of the Lie bracket.} %
-graph with $k$ leaves and $n$ internal vertices, all of them 3-valent, we put $P^{(\ell)}$ on every  edge, the structure constants of $\g$
+If $\Gamma$ is a tadpole-free\footnote{\color{teal} The Lie algebra factors $T_{\Gamma}$ are all automatically zero  for any diagram with a tadpole, because of the 
+antisymmetry of the Lie bracket. Thus, all graphs considered in this section are tadpole-free, unlike in section \ref{Courantssec}.} graph with $k$ leaves and $n$ internal vertices, all of them 3-valent, we put $P^{(\ell)}$ on every  edge, the structure constants of $\g$
 $$c\in\g^*\otimes\g^*\otimes\g^*$$
-(where we identify $\g$ with $\g^*$ via the pairing on $\g$) on every vertex, contract corresponding $\g$'s with $\g^*$'s, and finally integrate over the internal vertices, i.e.\ over $\cf_n(B^3)$.  Let us denote the result by
+(where we identify $\g$ with $\g^*$ via the inner product) on every vertex, contract corresponding $\g$'s with $\g^*$'s, and finally integrate over the internal vertices, i.e.\ over $\cf_n(B^3)$.  Let us denote the result by
 $$\alpha^{(\ell)}_{\Gamma}\in\Omega^k\bigl(\cf_k(B^3)\bigr)[\![\hbar]\!]\otimes\g^{\otimes k}.$$
 We then have
 $$G_k^{(\ell)}= 
@@ -447,7 +473,7 @@ $$G_k^{(\ell)}=
 where the sum runs over all graphs with $k$ labelled leaves, $\chi(\Gamma)$ is the Euler characteristic of $\Gamma$ and $\on{Aut}_0(\Gamma)$ is the group of automorphisms of $\Gamma$ preserving the leaves.
 
 Since the propagator is the sum of two terms
-$$P^{(\ell)}=P^{(\ell)}_+ + P^{(\ell)}_-\qquad (P^{(\ell)}_+=\bar P^{(\ell)}_0\otimes t_+,\ P^{(\ell)}_-= P^{(\ell)}_0\otimes t_-),$$
+$$P^{(\ell)}=P^{(\ell)}_+ + P^{(\ell)}_-\qquad (P^{(\ell)}_+=P^{(\ell)}_0\otimes t_+,\ P^{(\ell)}_-=\bar P^{(\ell)}_0\otimes t_-),$$
 it is convenient to use graphs $\Gamma'$ with signs over the edges:
 $$
 \begin{tikzpicture}[scale=0.6]
@@ -470,7 +496,7 @@ The advantage of these signed graphs $\Gamma'$ is that we have
 $$\alpha^{(\ell)}_{\Gamma'} = w^{(\ell)}_{\Gamma'}\otimes T_{\Gamma'},\qquad w^{(\ell)}_{\Gamma'}\in\Omega^k\bigl(\cf_k(B^3)\bigr)[\![\hbar]\!],\ T_{\Gamma'}\in\g^{\otimes n}$$
 where $w^{(\ell)}_{\Gamma'}$ is independent of $\g$ and of $V_+$.
 
-Namely, $w^{(\ell)}_{\Gamma'}$ is obtained by putting $\bar P^{(\ell)}_0$ to every  $(+)$-edge, $P^{(\ell)}_0$ on every  $(-)$-edge, and integrating over the internal vertices. The Lie algebra factor $T_{\Gamma'}$ is obtained by putting $t_+$ on every $(+)$-edge, $t_-$ on every $(-)$-edge, $c$ on every vertex, and contracting corresponding $\g$'s with $\g^*$'s.
+Namely, $w^{(\ell)}_{\Gamma'}$ is obtained by putting $P^{(\ell)}_0$ to every  $(+)$-edge, $\bar P^{(\ell)}_0$ on every  $(-)$-edge, and integrating over the internal vertices. The Lie algebra factor $T_{\Gamma'}$ is obtained by putting $t_+$ on every $(+)$-edge, $t_-$ on every $(-)$-edge, $c$ on every vertex, and contracting corresponding $\g$'s with $\g^*$'s.
 
 \begin{rem}[Signs] 
 In the discussion above we glossed over the signs appearing in the calculation of $G_k^{(\ell)}$'s. 
@@ -521,7 +547,7 @@ D:=
 As a result, the 1-loop condition for conformal invariance of the $V_+$-boundary condition is 
 $$T_{D}=0.$$
 
-The element $-T_{D}\in V_+\otimes V_-$ is known as the \emph{generalized Ricci tensor} of the generalized metric $V_+\subset\g$ \cite{CSW,G,JV,SV}. The 1-loop conformality condition is thus the vanishing of the generalized Ricci tensor. %{\color{red} CITE \cite{SST} PROPERLY}
+The element $-T_{D}\in V_+\otimes V_-$ is known as the \emph{generalized Ricci tensor} of the generalized metric $V_+\subset\g$ \cite{CSW,G,SV,???}. The 1-loop conformality condition is thus the vanishing of the generalized Ricci tensor. {\color{teal} Note that $T_{D} = 0$ for the usual chiral boundary condition, where $V_{+} = \g$. } %{\color{red} CITE \cite{SST} PROPERLY}
 
 \begin{rem}
 The 1-loop conformality condition $T_D=0$ (and the corresponding role of $T_D$ as a beta-function, see \S\ref{ss:RGflow}) was discovered in \cite{SST} for a 2-dim model which can be seen as a Hamiltonian version of the Chern-Simons model with the $V_+$-boundary condition. This somewhat miraculous result of \emph{op.cit.} thus gets a natural explanation, coming from a single Chern-Simons diagram.
@@ -529,11 +555,13 @@ The 1-loop conformality condition $T_D=0$ (and the corresponding role of $T_D$ a
 
 \subsection{Effective action and Weyl anomaly}
 As usual, it is more economical to study the  1PI effective action $S^{(\ell)}_\text{eff}$ rather than the correlation forms $G_k^{(\ell)}$. It is a functional on our BV space of fields
-$$\Omega_{\bar b}(B^3,V_+)[1] \oplus \Omega_{ b}(B^3,V_-)[1] \subset \Omega(B^3,\g)[1] $$
+$$\bigl(\Omega_b(B^3)\otimes V_+\, \oplus\, \Omega_{\bar b}(B^3)\otimes V_-\bigr)[1] $$
 given by
 $$S^{(\ell)}_\text{eff}(A)= S(A) + 
 \sum_\Gamma \frac{(i\hbar)^{1-\chi(\Gamma)}}{|\on{Aut}(\Gamma)|} S_\Gamma^{(\ell)}(A).$$
-Here $\Gamma$ runs over all 1PI graphs with at least one loop, $1-\chi(\Gamma)$ is the number of loops of $\Gamma$, and $\on{Aut}(\Gamma)$ is the group of all automorphisms of $\Gamma$. Finally, $S_\Gamma^{(\ell)}(A)$ is obtained by putting $A$ on every leaf, $P^{(\ell)}$ on every internal edge, $c$ on every internal vertex, contracting corresponding $\g$'s and $\g^*$'s, and integrating.
+Here $\Gamma$ runs over all 1PI graphs with at least one loop, $1-\chi(\Gamma)$ is the number of loops of $\Gamma$, and $\on{Aut}(\Gamma)$ is the group of all automorphisms of $\Gamma$. Finally, $S_\Gamma^{(\ell)}(A)$ is obtained by putting $A$ on every leaf, $P^{(\ell)}$ on every internal edge, $c$ on every internal vertex, contracting corresponding $\g$'s and $\g^*$'s, and integrating. 
+{\color{teal} The correlation functions $G^{(\ell)}_{k}(x_{1}, \dots, x_{k})$ then can be computed from 
+$S^{(\ell)}_\text{eff}$ using only tree diagrams \cite{Weinberg}.}
 
 
 % Its Taylor coefficients are forms [BE CAREFUL HERE - distributional forms]
@@ -572,8 +600,13 @@ $$
 \draw[gray] (b)--(A2);
 
 \end{tikzpicture}
-$$
-To get its divergent part, we use the following lemma which can be proved by a straightforward calculation (see Appendix).
+$${\color{teal}
+The expression associated to this graph is 
+\[ \frac{i\hbar}{2} \int_{q_{1}, q_{2} \in \cf_{2}(B^3)}  A^{i}(q_{1}) A^{j}(q_{2}) \Theta_{\ell}(z_{1}, z_{2})  \frac{d z_{1} dz_{2}}{ 2\pi i (z_{1}-z_{2})^{2}}\frac{d \bar{z}_{1} d\bar{z}_{2}}{ -2\pi i (\bar{z}_{1}-\bar{z}_{2})^{2}} \langle T_{D}, e_{i} \otimes e_{j} \rangle \]
+where $z_{1}, z_{2}$ are functions of $q_{1}$ and $q_{2}$ and $A = A^{i}\otimes e_{i} \in \Omega(B^{3})\otimes \g$. To get the part that diverges as $\ell\to 0$, we use the following lemma which can be proved by a straightforward calculation (see Appendix). The term $r^{*}(\Theta_{\epsilon\ell_1}-\Theta_{\epsilon\ell_2})$ restricts $z_{2}$ to a small annulus around $z_{1}$.
+} 
+
+{\color{gray}To get its divergent part, we use the following lemma which can be proved by a straightforward calculation (see Appendix).}
 \begin{lem}\label{lem:CS}
 If $\ell_1,\ell_2\colon S^2\to(0,\infty)$ are smooth, $\alpha,\beta\in\Omega(B^3)$, and if $p_1$ and $p_2$ are the projections $\cf_2(B^3)\to B^3$, then
 \begin{multline*}
@@ -585,34 +618,35 @@ where $\alpha^{(1)}$ is the 1-form part of $\alpha$ and $*$ is the Hodge $*$ on 
 We thus get the 1-loop Weyl anomaly
 \begin{multline}\label{conf-anom}
 \lim_{\epsilon\to0_+}\Bigl( S_\text{eff}^{(\epsilon\ell_1),\text{1-loop}}(A) - S_\text{eff}^{(\epsilon\ell_2),\text{1-loop}}(A)\Bigr)\\
-=-\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D}, A^{(1)}_+ A^{(1)}_-\ra
+=\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D}, A^{(1)}_+ A^{(1)}_-\ra
 \end{multline}
 where $A_\pm$ is the component of $A$ with the values in $V_\pm$. Notice that on $S^2$ we have $A^{(1)}_+A^{(1)}_+=A^{(1)}_-A^{(1)}_-=0$ because of the boundary condition, which explains why only the diagram $D$ appears in the result.
 
-\subsection{RG flow of $V_+$}\label{ss:RGflow}
-\subsubsection{Renormalization}
-If the generalized Ricci tensor $-T_{D}\in V_+\otimes V_-$ is non-zero, the limit $\lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}$ doesn't exist.
+\subsection*{\color{gray} 4.5. RG flow of the generalized metric $V_+$}
+\subsection{\color{teal} Renormalization}\label{ss:RGflow}
+If the generalized Ricci tensor $-T_{D}\in V_+\otimes V_-$ is non-zero, the limit $\lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}$ {\color{teal} diverges logarithmically.} {\color{gray} doesn't exist.}
 From \eqref{conf-anom} we get
 \begin{equation}\label{Seff-asymp}
-  \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A)= -\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra.  
+  \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A)= \frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra.  
 \end{equation}
 
 To get a meaningful effective action in the limit $\epsilon\to0$ we have to renormalize $V_+$, i.e.\ make $V_+(\epsilon)\subset\g$  a function of $\epsilon$ such that
 $$
 \lim_{\epsilon\to0_+}S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A,V_+(\epsilon))
 $$
-exists (where we made the dependence of $S_\text{eff}$ on $V_+$ explicit). More precisely, we impose
+exists (where we made the dependence of $S_\text{eff}$ on $V_+$ explicit). More precisely, we impose {\color{teal} the cancellation of 
+the logarithmical divergence}
 \begin{equation}\label{RG-howto}
 \lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell),\text{1-loop}}(A,V_+(\epsilon))=0
 \end{equation}
 and from that and from \eqref{Seff-asymp} get an ODE for $V_+$, i.e.\ its RG flow.
 
-\subsubsection{Field redefinition}
+\subsubsection{\color{teal} Field redefinition}
 This usual approach has to be slightly modified, however, because the space of fields depends on $\epsilon$ (as $V_+$, and thus the boundary condition, depends on $\epsilon$). We will redefine the fields so that the boundary condition doesn't change, and instead get a change of the action $S$.
 
-If we have an infinitesimal $\delta R\in\bw^2\g=\mf{so}(\g)$, let us deform $V_+$ to $(1+\delta R)V_+$ (if $v\in\g$, by $\delta R\,v\in\g$ we mean the element given by $\la\delta R\,v,w\ra=\la \delta R,v\otimes w\ra$ for all $w\in\g$). We can then redefine the fields so that they satisfy the deformed boundary condition via 
-$$A\to A+\delta A, \quad\delta A= f\,\delta R\,A,$$
-where $f\in C^\infty(B^3)$ is an arbitrary function s.t.\ $f|_{S^2}=1$.
+If we have an infinitesimal $\delta R\in\bw^2\g=\mf{so}(\g)$, let us deform $V_+$ to $(1+\delta R)V_+$ (if $v\in\g$, by $\delta R\,v\in\g$ we mean the element given by $\la\delta R\,v,w\ra=\la \delta R,v\otimes w\ra$ for all $w\in\g$). {\color{teal} Thus, with changing $V_{+}$ we can move the fields
+so that they satisfy the deformed boundary condition via $$A\to A+\delta A\,,\quad \delta A= f\,\delta R\,A$$. Here, $f\in C^\infty(B^3)$ is an arbitrary function s.t.\ $f|_{S^2}=1$, i.e. we can redefine fields only close to the boundary.}
+{\color{gray}We can redefine the fields so that they satisfy the deformed boundary condition via $A\to A+\delta A$, $\delta A= f\,\delta R\,A$, where $f\in C^\infty(B^3)$ is an arbitrary function s.t.\ $f|_{S^2}=1$.}
 
 
 The variation of the (classical) action that we obtain is
@@ -625,17 +659,19 @@ $$
  $$\frac12\int_{B^3}\la f\,\delta R, AA\ra.$$
 %This transformation replaces the boundary condition $V_+$ by $(1+\delta R)V_+$. 
 In other words, the change of the boundary condition is equivalent (up to a BV-exact term) to not changing the boundary condition, and adding the boundary term
-$$\frac12\int_{S^2}\la \delta R,AA\ra$$
+$$-\frac12\int_{S^2}\la \delta R,AA\ra$$
 to the action functional instead.
 
-\subsubsection{The RG flow}
-Now we can interpret \eqref{RG-howto}: if 
+\subsubsection{\color{teal} RG flow of the generalized metric $V_+$}
+
+{\color{gray}Now we can interpret the \eqref{RG-howto}: if }
+{\color{teal} Now we can interpret the condition \eqref{RG-howto} for cancellation of the divergence: if }
 \begin{subequations}\label{RG}
 \begin{equation}
 V_+(\epsilon+d\epsilon)=\bigl(1+\frac{d\epsilon}\epsilon\,\hbar\, B\bigr)V_+(\epsilon)
 \end{equation}
  for a suitable $B\in\bw^2\g$, then \eqref{RG-howto} gives us (in the limit $\epsilon\to0$)
-$$-\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra +\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
+$$\frac\hbar{2\pi}\int_{S^2} \la T_{D}, A^{(1)}_+ A^{(1)}_-\ra -\frac\hbar2\int_{S^2}\la B,AA\ra=0$$
 and so we can set
 \begin{equation}
 B=\frac1{2\pi} (T_{D}^{\vphantom{o}}-T_{D}^{\hphantom{x}\text{op}}).
@@ -646,8 +682,8 @@ We thus found the 1-loop RG flow of $V_+$ in our model, with $\hbar B$ playing t
 \section{Further developments}
 In this section we shall very briefly summarize natural generalizations of what we did in this paper; they will be treated in more detail elsewhere. Before starting, let us mention that the model from \S\ref{sec:diag} should also be developed in more detail, whether it is the calculation of the Weyl anomaly \eqref{conf-anom} to higher powers of $\hbar$, or a calculation of a generalized Knizhnik-Zamolodchikov connection for  Wilson lines with endpoints on $S^2$.
 
-\subsection{Courant $\sigma$-model and generalized Ricci tensor}
-Chern-Simons theory with the boundary condition given by a generalized metric $V_+\subset\g$ has a natural generalization to a Courant $\sigma$-model (again a 3-dim TFT) with a boundary condition given, again, by a generalized metric in the corresponding Courant algebroid. Such a model is needed for a formulation of the Poisson-Lie T-duality with spectators \cite{PSV,S}. Moreover, if the Courant algebroid is exact, this model is directly equivalent to a 2-dim $\sigma$-model.
+\subsection{Courant $\sigma$-model and generalized Ricci tensor} \label{Courantssec}
+Chern-Simons theory with the boundary condition given by a generalized metric $V_+\subset\g$ has a natural generalization to a Courant $\sigma$-model (again a 3-dim TFT) with a boundary condition given, again, by a generalized metric in the corresponding Courant algebroid. Such a model is needed for a formulation of the Poisson-Lie T-duality with spectators \cite{S,PSV}. Moreover, if the Courant algebroid is exact, this model is directly equivalent to a 2-dim $\sigma$-model.
 
 \subsubsection{Courant $\sigma$-model}
 Let us describe Courant $\sigma$-models supposing that the underlying Courant algebroid is trivial as a vector bundle and that its base is a vector space (this trivialization is a part of our gauge fixing); we refer the reader to \cite{R} for an invariant and global description. 
@@ -675,7 +711,7 @@ The action functional remains the same.
 
 \subsubsection{Propagators}
 Let us now suppose that $M=H^3\subset\R^3$ is the upper half space (we do not take $M=B^3$ since our complex of fields would have a non-trivial cohomology, and for our purposes $M=H^3$ is sufficient). The total propagator is the sum
-$$P=\bar P_0\otimes t_+ +  P_0\otimes t_- + P_1\otimes\id + P_1^{op}\otimes\id^{op}.$$
+$$P=P_0\otimes t_+ + \bar P_0\otimes t_- + P_1\otimes\id + P_1^{op}\otimes\id^{op}.$$
 Here $P_0$ is as before, $t_\pm\in S^2V_\pm$ as well, 
 $$P_1\in\Omega^2(\cf_2(H^3))$$ is a suitable closed 2-form vanishing when the first point is on the boundary, and $\id\in W^*\otimes W$ is the identity $W\to W$. Graphically we shall represent the terms in this sum as
 $$P=\ 
@@ -762,7 +798,7 @@ This expression is, up to the sign, the \emph{generalized Ricci tensor} of the g
 Let us be more precise about the appearance of $T_{D'}$: we have
 \begin{multline*}
 \lim_{\epsilon\to0_+}\Bigl( S_\text{eff}^{(\epsilon\ell_1),\text{1-loop}}(x,A,p) - S_\text{eff}^{(\epsilon\ell_2),\text{1-loop}}(x,A,p)\Bigr)\\
-=-\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D'}(x), A^{(1)}_+ A^{(1)}_-\ra  
+=\frac{\hbar}{2\pi}\int_{S^2} \log(\ell_1/\ell_2)\;\la T_{D'}(x), A^{(1)}_+ A^{(1)}_-\ra  
 \end{multline*}
 where $T_{D'}(x)$ denotes $T_{D'}$ computed with $c$'s and $\rho$'s at the point $x\in W$.  
 %{\color{red} THE SHIFT OF $x_0$ TO $x$ GIVEN BY TAYLOR SERIES - LOOKS FISHY.}
@@ -796,7 +832,7 @@ Since for any $\mc F\in\mc{G}_\mc X$ we have
 $$T_\mc F \mc{G}_\mc X =C^\infty(\mc F), $$
 the RG flow should assign a function on $\mc F$, i.e.\ a functional on the space of the boundary fields, to every $\mc F$. This functional is, following the calculation from \S\ref{ss:RGflow}, equal to
 \begin{equation}\label{akszrg}
--\lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell)}.
+\lim_{\epsilon\to0_+} \epsilon\,\frac d{d\epsilon}\; S_\text{eff}^{(\epsilon\ell)}.
 \end{equation}
 
 
@@ -892,31 +928,22 @@ This behaviour follows from a simple scaling argument: the propagators are scale
 
 
 \begin{thebibliography}{99}
-\bibitem{AKSZ} M. Alexandrov, M. Kontsevich, A. Schwarz, O. Zaboronsky, \emph{The geometry of the master equation and topological quantum field theory}, Int. J. Modern Phys. A 12 (1997), pp. 1405--1430.
-\bibitem{AS} S. Axelrod, I.M. Singer, \emph{Chern-Simons perturbation theory II}, J. Differential Geom.
- 39, 173-213 (1994).
-\bibitem{CW} A. Carey, S. Johnson, M. Murray, D. Stevenson, Bai-Ling Wang, \emph{Bundle gerbes for Chern-Simons and Wess-Zumino-Witten theories}. Communications in Mathematical Physics 259, 577–613 (2005)
-\bibitem{CM} A. Cattaneo, P. Mnev, \emph{Remarks on Chern-Simons invariants}, Communications in Mathematical Physics 293, 803--836 (2010)
-\bibitem{CMR} A. S. Cattaneo, P. Mnev, and N. Reshetikhin, \emph{Perturbative quantum gauge theories on manifolds with boundary}, Communications in Mathematical Physics 357(2), 631--730 (2018)
-\bibitem{CSW} A. Coimbra, C. Strickland-Constable, D. Waldram, \emph{Supergravity as generalised geometry I: type II theories}, J. High Energ. Phys. (2011) 091.
-\bibitem{G} M. Garcia-Fernandes, Ricci flow, \emph{Killing spinors, and T-duality in generalized geometry}, Adv. Math. 350 (2019), 1059–1108.
-\bibitem{JV} B. Jurčo, J. Vysoký, \emph{Courant algebroid connections and string effective actions,
-Noncommutative geometry and physics}. 4, World Sci. Publ., Hackensack, NJ, 2017, pp. 211–265.
-\bibitem{KSa}  A. Kapustin, N. Saulina, \emph{Topological boundary conditions in abelian Chern–Simons theory}, Nuclear Physics B. 845 (2011) 393--435.
-\bibitem{KSe} C. Klimčík, P. Ševera, \emph{Dual non-Abelian T-duality and the Drinfeld double}. Phys.Lett. B 351 (1995), 455--462.
-\bibitem{K} M. Kontsevich, \emph{Feynman Diagrams and Low-Dimensional Topology}. In: Joseph A., Mignot F., Murat F., Prum B., Rentschler R. (eds) First European Congress of Mathematics Paris, July 6–10, 1992. Progress in Mathematics, vol 120. Birkhäuser Basel.
-\bibitem{K2} M. Kontsevich, \emph{Deformation Quantization of Poisson Manifolds}, Letters in Mathematical Physics 66, 157–216 (2003)
-\bibitem{PSV} J. Pulmann, P. Ševera, F. Valach, \emph{A non-abelian duality for (higher) gauge theories}, arXiv:1909.06151
-\bibitem{R} D. Roytenberg, \emph{AKSZ–BV Formalism and Courant Algebroid-Induced Topological Field Theories}, Lett.Math.Phys. 79 (2007) 143--159.
-\bibitem{RS} M. Rieffel, A. Schwarz, \emph{Morita equivalence of multidimensional noncommutative tori}. Internat. J. Math. 10 (1999), no. 2, 289–299.
-\bibitem{S} P. Ševera, \emph{Poisson-Lie T-duality as a boundary phenomenon of Chern-Simons theory}, JHEP 1605 (2016) 044.
-\bibitem{Smor} P. Ševera, \emph{Moduli spaces of flat connections and Morita
-equivalence of quantum tori},  Documenta Math. 17, 607-625 (2012)
-\bibitem{SV} P. \v Severa, F. Valach, \emph{Ricci flow, Courant algebroids, and renormalization of Poisson-Lie T-duality}, Letters in Mathematical Physics, 1-13, (2017).
-\bibitem{SV2} P. Ševera, F. Valach, \emph{Courant Algebroids, Poisson–Lie T-Duality, and Type II Supergravities}, Communications in Mathematical Physics 375, 307–344 (2020)
-\bibitem{SST} K. Sfetsos, K. Siampos, D.C. Thompson, \emph{Renormalization of Lorentz
-non-invariant actions and manifest T-duality}, Nucl. Phys. B827 (2010) 545--564
-\bibitem{W} E. Witten, \emph{Quantum Field Theory and the Jones Polynomial} Commun.Math.Phys. 121, 351–399 (1989).
+\bibitem{AKSZ} AKSZ
+\bibitem{AS} Axelrod Singer
+\bibitem{CM} Cattaneo Mnev
+\bibitem{CSW} Coimbra Strickland-Constable Waldrum
+\bibitem{G} Garcia-Fernandes
+\bibitem{KSa} Kaputin Saulina
+\bibitem{KSe} Klimčík Ševera
+\bibitem{K} Kontsevich CS
+\bibitem{K2} Kontsevich DQ
+\bibitem{PSV} Pulmann Ševera Valach
+\bibitem{R} Roytenberg (Courant model)
+\bibitem{SST} Siampos Sfetsos Thompson 
+\bibitem{S} Ševera CS
+\bibitem{SV} Ševera Valach
+\bibitem{SV2} Ševera Valach II
+\bibitem{W} Witten CS
 
 
 \end{thebibliography}
